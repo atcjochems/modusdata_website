@@ -15,7 +15,7 @@ export const content = {
     contactTitle: 'Contact',
     contactText: 'Reach out for AI consulting, data science projects and Swiss market support.',
     addressLines: ['Benkenstrasse 3', '4106 Therwil', 'Switzerland'],
-    email: 'arthur@ailuminate.nl',
+    email: 'arthur@modusdata.ch',
     languageSwitch: 'Deutsch',
     nav: {
       home: 'Home',
@@ -40,7 +40,7 @@ export const content = {
     contactTitle: 'Kontakt',
     contactText: 'Kontaktieren Sie uns für KI-Beratung, Data-Science-Projekte und Unterstützung im Schweizer Markt.',
     addressLines: ['Benkenstrasse 3', '4106 Therwil', 'Schweiz'],
-    email: 'arthur@ailuminate.nl',
+    email: 'arthur@modusdata.ch',
     languageSwitch: 'English',
     nav: {
       home: 'Start',
