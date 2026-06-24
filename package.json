@@ -6,12 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "prepare-docs": "node scripts/copy-docs.js",
+    "deploy": "npm run build && npm run prepare-docs"
   },
   "dependencies": {
     "astro": "^4.9.0"
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }
