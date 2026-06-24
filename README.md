@@ -52,10 +52,12 @@ This website is based on a free Astro approach inspired by the official `Astro S
 
 ### GitHub Pages deployment
 
+If GitHub Pages only shows `main` as a selectable branch, use the `main` branch with the `/docs` folder instead.
+
 1. Push the repository to GitHub.
-2. The GitHub Actions workflow in `.github/workflows/deploy.yml` will automatically build the site and publish the generated `dist/` folder to the `gh-pages` branch.
-3. In the repository settings under Pages, select the `gh-pages` branch if it is not already selected.
+2. In the repository settings under Pages, select `main` as the branch and `/docs` as the folder.
+3. Save the settings.
 4. Your site will be available at:
    `https://atcjochems.github.io/modusdata_website/`
 
-The site base URL is configured in `astro.config.mjs` so assets load correctly from the repo page.
+This repo includes a static site copy in `docs/` so publishing from `main` is supported even when `gh-pages` has not been created.
