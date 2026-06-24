@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { content } from '../data/content';
+const data = content.en;
+---
+<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
+  <section class="hero">
+    <p>{data.subtitle}</p>
+    <h1>{data.title}</h1>
+    <p>{data.hero}</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>{data.servicesIntro}</h2>
+    <ul class="service-list">
+      {data.services.map((service) => (
+        <li>{service}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="about" class="section grid">
+    <div class="card">
+      <h2>{data.aboutTitle}</h2>
+      <p>{data.aboutText}</p>
+    </div>
+    <div class="card">
+      <h2>{data.contactTitle}</h2>
+      <div class="contact-card">
+        <p>{data.contactText}</p>
+        <p>{data.addressLines.join(', ')}</p>
+        <a href={`mailto:${data.email}`}>{data.email}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

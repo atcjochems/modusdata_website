@@ -1,0 +1,17 @@
+{
+  "name": "modusdata-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "astro": "^4.9.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}

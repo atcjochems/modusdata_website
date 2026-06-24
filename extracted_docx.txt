@@ -1,0 +1,148 @@
+--- CV Arthur Jochems AI eng.docx
+Arthur Jochems
+Freelance Data Scientist & AI Engineer | In Switzerland starting August 1st Maastricht, Limburg, Netherlands | +31613955891 | arthur@ailuminate.nl
+Summary
+Results-driven Data Scientist and AI Engineer with over 10 years of experience delivering high-impact, scalable artificial intelligence and data platforms across healthcare, pharmaceutical, and government sectors. Track record of taking Generative AI systems from initial prototype to robust enterprise production, implementing complex Retrieval-Augmented Generation (RAG) architectures, and orchestrating full-lifecycle MLOps. Deep technical expertise across the Microsoft AI Stack (Azure Data Factory, PowerBI, Azure Databricks, Copilot Studio, and Power Platform) combined with Python engineering to drive measurable business transformation.
+Experience
+Mercedes-Benz CAC
+Senior AI Engineer (Contractor) November 2025 – Present (Maastricht, Netherlands)
+Generative AI Production Deployment: Developed and deployed an end-to-end, production-grade enterprise GenAI integration designed to automatically classify incoming customer correspondence and generate high-accuracy summaries. Initiated the project from POC development to productization.
+Local LLM Infrastructure: Successfully provisioned and optimized a localized, open-source Large Language Model (LLM) endpoint hosted via Azure Container Apps to maintain strict corporate data boundaries and ensure output reliability.
+Enterprise Integration: Leveraged Python, Databricks, FastAPI, SGLang, MLflow, Genie, Databricks Dashboards, GitHub CI/CD, pytest to link the local Azure-hosted LLM directly into the Salesforce CRM ecosystem, automating manual workflows and accelerating customer response times.
+Daiichi Sankyo Europe GmbH
+Senior Data Scientist (Contractor) October 2024 – October 2025
+Production GenAI Engineering: Designed and brought to production an automated LLM error-detection system for highly regulated clinical study reports utilizing Hugging Face Transformers, Langchain, Langwatch, and Pydantic.
+Advanced Analytics: Implemented real-world evidence generation pipelines and built production deep learning computer vision frameworks (ResNet, ConvNeXT, ViT) for complex medical imaging data.
+Technologies: Python, PyTorch, AWS EC2/S3, FastAPI, Streamlit, Docker, GitHub, Google Cloud Run.
+ZorgDomein
+Data Scientist / Generative AI Engineer (Contractor) June 2024 – August 2024 (Breukelen, Utrecht, Netherlands)
+Enterprise RAG Architecture: Developed an advanced NLP and Generative AI recommender system leveraging large volumes of medical texts to guide general practitioners toward target healthcare services.
+Microsoft AI Stack Implementation: Successfully built, evaluated, and productionized a complex Retrieval-Augmented Generation (RAG) pipeline utilizing semantic search, embeddings, Azure OpenAI embedding models, Azure Synapse Analytics, and Azure Databricks.
+Flemish Department of Justice
+Freelance Data Engineer (Contractor) March 2024 – March 2025 (Brussels, Belgium)
+Cloud Data Platform Development: Engineered a secure, scalable data platform for Flemish law enforcement utilizing Azure Databricks, PySpark, Azure Data Factory, Azure PowerPlatform and Azure Data Lake.
+Enterprise Data Modeling: Built and maintained various data pipelines, data warehouses, data marts, and dimensional data models (Kimball Star and Snowflake schemas) alongside customized PowerBI reporting suites.
+MLOps & CI/CD: Structured automated software delivery mechanisms by owning CI/CD pipeline deployments using Azure DevOps Server.
+Bunge
+Senior Data Scientist / Analyst (Contractor) September 2023 – January 2024 (Zaandam, North Holland, Netherlands)
+Developed and optimized machine learning models and data pipelines supporting global food product marketing and sales.
+Roche
+Senior Data Scientist (Contractor) November 2022 – August 2023 (Basel, Switzerland)
+LLM Optimization: Fine-tuned and deployed Large Language Models (LLMs) for topic extraction within high-volume pharmaceutical documentation.
+Business Value: Accelerated problem-solving timelines for internal drug production subject matter experts by over 70%.
+Technologies: Python, AWS SageMaker, Athena, Redshift, SQL.
+T-Mobile Nederland
+Senior Data Scientist May 2021 – June 2023 (The Hague, Netherlands)
+Built production anti-fraud machine learning systems (XGBoost, Random Forest, PySpark) saving the company over €1M initially, with projected yearly B2B savings of €3M. 
+PwC Deutschland
+Senior Data Scientist August 2020 – April 2021 (Düsseldorf, Germany)
+Developed a privacy-compliant NLP solution embedded into a SaaS data product using Azure Machine Learning, Azure Data Factory, Azure Databricks, BERT, Spark NLP, GPT models, and PowerBI.
+Maastricht University
+Senior Data Scientist September 2014 – August 2020 (Maastricht, Netherlands)
+Technical Skills Matrix
+Core AI & Machine Learning: Generative AI, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Fine-Tuning, Computer Vision, Transformers, Natural Language Processing (NLP).
+Microsoft AI & Cloud Stack: Azure OpenAI, Azure Data Factory, Azure DevOps, PowerBI, Copilot, Power Platform (Copilot Studio, Power Automate), Azure Machine Learning, Azure Container Apps (ACA).
+Data Engineering & Languages: Python, PySpark, SQL, Databricks, Kimball Dimensional Modeling (Star/Snowflake), MLOps, CI/CD, Git.
+Education & Certifications
+PhD in Neuroscience – Ruhr-Universität Bochum (2010 - 2013)
+MSc in Computational Neuroscience – The University of Manchester (2009 - 2010)
+BSc in Computer Science – Universiteit Utrecht (2007 - 2009)
+Certification: Microsoft Certified: DP-900 Azure Data Fundamentals
+Other Certifications: MLOps Fundamentals, Distributed Computing with Spark SQL, Building GANs.
+--- Motivation und Businessplan.docx
+Motivationsschreiben und Businessplan zur Beantragung der Aufenthaltsbewilligung B EU/EFTA als selbständig erwerbstätiger Data Scientist
+Arthur Jochems 
+Ailuminate B.V. 
+Manteletruwe 11, 
+6218WE Maastricht, 
+Niederlande 
++31 6 13955891 | arthur@ailuminate.nl 
+Oftringen (geplanter Wohn- und Geschäftssitz: Villa Am Tych 35, Oftringen) Datum: März 2026
+An das Amt für Migration und Integration (MIKA) Kanton Aargau Bahnhofstrasse 88, 5001 Aarau
+Betreff: Gesuch um Aufenthaltsbewilligung B EU/EFTA (selbständige Erwerbstätigkeit mit Geschäftssitz im Kanton Aargau) gemäss Merkblatt A0800 – Nachweis der selbständigen Erwerbstätigkeit, existenzsichernden Tätigkeit und finanziellen Mittel für die gesamte Familie
+Sehr geehrte Damen und Herren,
+Hiermit beantrage ich zusammen mit meiner Ehefrau und unseren beiden Kindern (2 und 4 Jahre) die Erteilung der Aufenthaltsbewilligung B EU/EFTA für selbständig Erwerbstätige mit Geschäftssitz im Kanton Aargau. Ich plane, ab Juli 2026 meinen Wohn- und Geschäftssitz in die gemietete Wohnung „Villa Am Tych 35“ in Oftringen zu verlegen und dort meine freiberufliche Tätigkeit als Senior Data Scientist/Engineer unter der Firma Ailuminate B.V. fortzusetzen und auszubauen.
+Das vorliegende Schreiben dient als schriftliche Begründung (Motivationsschreiben), Businessplan und Marktanalyse gemäss Ziffer 5.1 Merkblatt A0800. Es belegt:
+die Absicht, mich zwecks Ausübung einer selbständigen Erwerbstätigkeit in der Schweiz niederzulassen,
+die Ausübung einer existenzsichernden Tätigkeit mit ausreichend regelmässigem Einkommen für mich und meine Familie ohne Inanspruchnahme von Sozialhilfe,
+sowie alle weiteren geforderten Nachweise (Unternehmensbuchhaltung, Marktanalyse, Mietvertrag etc.).
+1. Meine Expertise und beruflicher Hintergrund (Nachweis der Qualifikation)
+Ich bin Senior Data Scientist/Engineer mit über 10 Jahren Erfahrung in Medizin, Pharma, Regierung und Telekommunikation. Mein PhD in Neuroscience (magna cum laude, Ruhr-Universität Bochum, 2013) sowie MSc Neuroinformatics und BSc Computer Science bilden die wissenschaftliche Grundlage.
+Ich habe Teams von bis zu 10 Junior Data Scientists geleitet und in renommierten Unternehmen gearbeitet, darunter:
+Roche, Basel (Freelance Chatbot/AI Engineer 2022–2023): NLP- und LLM-Modelle für Pharmatexte, Reduzierung der Bearbeitungszeit um >70 %.
+Daiichi Sankyo, München (Freelance Data Scientist seit Oktober 2024 – laufend bis März 2027): Data-Analyse und Model-Development für Real-World-Evidence bei Anti-Krebs-Medikamenten (Computer-Vision-Modelle mit ResNet, ViT etc.). Dieser laufende, vollständig remote Vertrag wird nahtlos von der Schweiz aus fortgesetzt und unterstreicht die Stabilität meiner Einnahmen.
+Weitere Projekte: Zorgdomein (generative AI Recommender), Bunge, T-Mobile (Fraud-Detection-Modelle mit Einsparungen von >€4 Mio.).
+Kernkompetenzen (passend zu Pharma & AI): Real-World Evidence Generation, LLMs (Langchain, Hugging Face, Qwen), Computer Vision (PyTorch), Survival Modelling (Scikit-Survival), ETL-Pipelines (Spark, Azure Databricks), MLOps, NLP und Generative AI. Zertifizierungen: Databricks Lakehouse, Azure DP-100 Data Scientist, MLOps (Google Cloud).
+Anhang: Vollständiger Lebenslauf (Lebenslauf_Arthur_Jochems.docx), laufender Vertrag/Auftragsbestätigung mit Daiichi Sankyo sowie die letzten 3 Jahresabschlüsse (ailuminate_b_v_resultatenrekening_2023-2025.xlsx mit Grafiken zu Umsatz, Kosten, Personalkosten und Nettogewinn).
+2. Fokus auf die Pharma-Branche
+Mein gesamter beruflicher Schwerpunkt liegt auf pharmazeutischer und medizinischer Datenanalyse. Ich habe Modelle für Krebsbehandlungen (Maastro Clinic, Maastricht University), Real-World-Evidence, Medikamenten-Produktion und Präzisionsmedizin entwickelt. Besonders stark bin ich in AI-gestützter Drug Discovery, medizinischer Bildgebung und NLP für regulatorische/pharmazeutische Texte – Bereiche, in denen Schweizer Pharmaunternehmen massiv investieren.
+3. Marktanalyse: Die boomende Pharma- und AI-Branche in der Schweiz
+Die Schweiz ist weltweit führend in der Pharmaindustrie (wichtigster Exportsektor). Mit Exporten im Wert von rund CHF 114,5 Mrd. (Stand 2024/2025) und einem Anteil von 40,5 % an den Gesamtexporten ist die Pharmabranche die wichtigste Exportbranche der Schweiz. Sie beschäftigt direkt ca. 50'600 Personen und schafft indirekt weitere 250'200 Arbeitsplätze. Der direkte BIP-Beitrag beträgt 5,8 %, mit indirekten Effekten 9,8 % (Wertschöpfung CHF 74,5 Mrd.). In den letzten 10 Jahren war die Branche für fast die Hälfte des gesamten BIP-Wachstums verantwortlich (Wachstum 14,5 % p.a.).
+Basel-Region („Bio-Valley“) ist das europäische Zentrum mit Roche und Novartis als globalen Playern. Der Kanton Aargau liegt strategisch ideal (direkt angrenzend):
+AI-Integration in Pharma explodiert: AI für Drug Discovery, personalisierte Medizin, Big Data und Precision Medicine. Schweizer Firmen suchen dringend hybride Talente (Domain-Knowledge + AI/Data Science).
+Hiring-Trends 2025/2026: Scientist- und Data-Science-Stellen wachsen landesweit um ca. 5 %, in der Basel-Region um 8,6–9 %. Besonders stark wächst die Nachfrage nach AI- und Data-Science-Rollen in der Pharma (+40 % YoY in Basel).
+Biotech-Finanzierung: Kapitalzufluss stieg 2024 um 22 % auf CHF 2,5 Mrd. (Rekord bei privaten Firmen).
+Potenzielle Kunden in meiner Reichweite (Home-Office in Oftringen + Reisen innerhalb der ganzen Schweiz möglich):
+Roche (Basel) – bereits direkter Kunde (2022–2023), Netzwerk vorhanden.
+Novartis (Basel), Lonza, IQVIA (Rotkreuz/Basel), Scailyte, Caris Life Sciences (Basel), RetinAI, Siegfried AG (Aargau/nahe Standorte).
+Weitere: Biotech-Start-ups in Basel/Zürich, Contract Research Organisations und Pharma-Dienstleister.
+Durch meine bestehenden Kontakte (inkl. laufendem Daiichi-Sankyo-Vertrag) und Expertise kann ich sofort Aufträge generieren. Der Markt für Freelance AI/Data Scientists in Pharma ist extrem nachfragegetrieben – genau die „existenzsichernde Tätigkeit“ mit regelmässigem Einkommen.
+4. Businessplan & operative Umsetzung in der Schweiz
+Geschäftssitz: Ab Juli 2026 in Oftringen (Villa Am Tych 35) – Home-Office für Data-Science-Tätigkeit (kein separates Geschäftslokal nötig; Mietvertrag als Nachweis beigefügt).
+Tätigkeit: Fortsetzung und Ausbau der Freelance-Dienstleistungen (AI-Modelle, Data Pipelines, NLP/LLM für Pharma). Umsatzgenerierung über bestehende und neue Schweizer Kunden – der laufende Daiichi-Sankyo-Vertrag sichert die Kontinuität.
+AHV-Anmeldung: Ich werde mich unverzüglich bei der AHV-Ausgleichskasse als selbständig Erwerbender anmelden.
+Finanzielle Mittel & Versicherung: Umfassende Kranken- und Unfallversicherung (obligatorische KVG) wird innerhalb von 3 Monaten abgeschlossen. Bank- und Versicherungsunterlagen auf Anfrage.
+Weitere Nachweise: Keine spezielle Berufsausübungsbewilligung erforderlich (Data Science fällt nicht unter die regulierten Gesundheitsberufe gemäss Ziff. 9 Merkblatt A0800).
+5. Finanzielle Nachweise – Unternehmensbuchhaltung der letzten 3 Jahre (existenzsichernd für die Familie)
+Die beigefügten Jahresabschlüsse (Excel + Grafiken) zeigen:
+Jahr
+Umsatz (Omzet)
+Gesamtkosten
+Personalkosten (Managementvergoeding)
+Nettogewinn (Nettoresultaat)
+2023
+€268'367,54
+€86'840,08
+€78'000
+€148'121,85
+2024
+€78'348
+€62'270,99
+€58'500
+€15'529,58
+2025
+€218'315,50
+€82'751,09
+€78'000
+€109'801,75
+Ø
+ca. €188'344
+–
+–
+ca. €91'151
+Der durchschnittliche Umsatz liegt bei ca. €188'000 pro Jahr – deutlich über dem für eine 4-köpfige Familie in der Schweiz erforderlichen existenzsichernden Einkommen. Der laufende Daiichi-Sankyo-Vertrag trägt zur Stabilität bei. Der Gewinn plus meine Entnahmen (Managementvergoeding) ermöglichen ein Leben ohne Sozialhilfe. Die Schwankung 2024 war projektbedingt; der Trend 2025 zeigt starkes Wachstum. Mit dem Umzug nach Oftringen und neuen Schweizer Aufträgen rechne ich mit stabilen oder steigenden Einnahmen.
+Beigefügte Grafiken (aus dem Excel) visualisieren Umsatz, Kosten, Personalkosten und Gewinn klar.
+6. Weitere geforderte Unterlagen (alle beigefügt oder zugesichert)
+Mietvertrag (Geschäfts- und Wohnsitz)
+Vollständiger Lebenslauf
+Jahresabschlüsse 2023–2025 + Grafiken
+Laufender Vertrag mit Daiichi Sankyo
+Familiennachzugsdokumente (Ehe- und Geburtsurkunden)
+AHV-Anmeldung (wird nach Einreise eingereicht)
+Krankenversicherungspolice (wird fristgerecht vorgelegt)
+Bankunterlagen auf Anfrage
+Ich werde mich innert 14 Tagen nach Einreise bei der Einwohnerkontrolle Oftringen anmelden und vor Aufnahme der Tätigkeit alle weiteren Beweismittel nachreichen.
+Mit diesem Gesuch erfülle ich sämtliche Voraussetzungen des Merkblatts A0800 (Ziffern 1–5). Ich freue mich auf die Zusammenarbeit und stehe für Rückfragen oder ergänzende Unterlagen jederzeit zur Verfügung.
+Mit freundlichen Grüssen
+Arthur Jochems
+Quellen zur Marktanalyse (Stand März 2026)
+Interpharma: „Der Fussabdruck der Pharma in der Schweiz“ (August 2025) und Health Panorama 2025.
+Swiss Biotech Report 2025 (Swiss Biotech Association / EY / scienceindustries, Mai 2025).
+SIGTAX: „Life Sciences in Switzerland: Data-Driven Trends for 2026“ (Februar 2026) und Panda International Recruitment Outlook 2025.
+Empfehlung zur Einreichung Kopiere diesen Text in Word, formatiere ihn sauber (Arial 11, 1,5 Zeilenabstand), füge deine Unterschrift ein und speichere als PDF. Anhangsliste (im Anschreiben erwähnen):
+Lebenslauf
+P&L-Excel + Grafiken
+Mietvertrag
+Laufender Vertrag / Auftragsbestätigung Daiichi Sankyo
+Passkopien Familie
+Ehe- und Geburtsurkunden
