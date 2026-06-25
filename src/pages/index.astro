@@ -4,9 +4,10 @@ import { content } from '../data/content';
 import Frontpage from '../content/pages/frontpage.md';
 
 const data = content.en;
+const Content = Frontpage.default;
 ---
 <BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
-  <Frontpage.Content />
+  <Content />
 </BaseLayout>
 
 <style>
