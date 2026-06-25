@@ -30,7 +30,11 @@ const { title, description, locale, switchUrl, nav } = Astro.props;
         </nav>
         <a class="lang-switch" href={switchUrl}>{Astro.props.langSwitch}</a>
       </header>
-      <main>{Astro.slot}</main>
+      
+      <main>
+        <slot />
+      </main>
+      
       <footer class="site-footer">
         <p>© {new Date().getFullYear()} Modus Data — Benkenstrasse 3, 4106 Therwil</p>
       </footer>
