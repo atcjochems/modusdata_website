@@ -1,106 +1,27 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { content } from '../../data/content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { content } from '../data/content';
+import { getEntry } from 'astro:content';
 
-const pages = await import.meta.glob('../../content/pages/*.md', { eager: true });
-const services = pages['../../content/pages/services.md'] as any;
+const servicesEntry = await getEntry('pages', 'services');
+if (!servicesEntry) throw new Error('Could not find services markdown');
+const { Content } = await servicesEntry.render();
 
-// FIX: Extract component factory into a capitalized variable
-const ServicesContent = services.default;
-
-const data = content.de;
+const data = content.de; // Use content.de for German subpages
 ---
-
-<BaseLayout 
-  title={data.nav.services + ' | ' + data.title}
-  description="Unsere AI- und Machine-Learning-Services"
-  locale="de" 
-  switchUrl="/services/" 
-  langSwitch={data.languageSwitch}
-  nav={data.nav}
->
+<BaseLayout title={`${data.nav.services} | Modus Data`} locale="en" switchUrl="/de/services/" langSwitch={data.languageSwitch} nav={data.nav}>
   <div class="markdown-content">
-    <!-- FIX: Render cleanly as an HTML element tag -->
-    <ServicesContent />
+    <Content />
   </div>
 </BaseLayout>
 
 <style>
-  :global(h1) {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(h2) {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(h3) {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  :global(p) {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  :global(ul) {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(li) {
-    margin-bottom: 0.5rem;
-  }
-
-  :global(a) {
-    color: var(--accent-color, #0066cc);
-    text-decoration: none;
-  }
-
-  :global(a:hover) {
-    text-decoration: underline;
-  }
-</style>
-
-<style>
-  :global(.markdown-content h1) {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(.markdown-content h2) {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(.markdown-content h3) {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  :global(.markdown-content p) {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  :global(.markdown-content ul) {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(.markdown-content li) {
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.markdown-content a) {
-    color: var(--accent-color, #0066cc);
-    text-decoration: none;
-  }
-
-  :global(.markdown-content a:hover) {
-    text-decoration: underline;
-  }
+  .markdown-content { margin: 3rem 0; }
+  .markdown-content :global(h1) { font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; }
+  .markdown-content :global(h2) { font-size: 1.85rem; font-weight: 600; color: #111827; margin-top: 2rem; margin-bottom: 1rem; }
+  .markdown-content :global(p) { font-size: 1.125rem; line-height: 1.65; color: #374151; margin-bottom: 1.25rem; }
+  .markdown-content :global(ul) { margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: square; }
+  .markdown-content :global(li) { font-size: 1.125rem; color: #4b5563; margin-bottom: 0.5rem; }
+  .markdown-content :global(a) { color: var(--accent-color, #0066cc); text-decoration: none; font-weight: 500; }
+  .markdown-content :global(a:hover) { text-decoration: underline; }
 </style>

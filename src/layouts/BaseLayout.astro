@@ -1,43 +1,62 @@
 ---
-const { title, description, locale, switchUrl, nav } = Astro.props;
+// 1. IMPORT THE GLOBAL CSS DIRECTLY IN THE FRONTMATTER
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  locale: string;
+  switchUrl: string;
+  langSwitch: string;
+  nav: {
+    services: string;
+    about: string;
+    contact: string;
+  };
+}
+
+const { title, description, locale, switchUrl, langSwitch, nav } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang={locale}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="/">
-          <img class="logo" src="/img/MD_logo.png" alt="Modus Data logo" />
-          <div>
-            <strong>Modus Data</strong>
-            <span>Therwil · Switzerland</span>
-          </div>
-        </a>
-        <nav class="site-nav">
-          <a href="#services">{nav.services}</a>
-          <a href="#about">{nav.about}</a>
-          <a href="#contact">{nav.contact}</a>
-        </nav>
-        <a class="lang-switch" href={switchUrl}>{Astro.props.langSwitch}</a>
-      </header>
-      
-      <main>
-        <slot />
-      </main>
-      
-      <footer class="site-footer">
-        <p>© {new Date().getFullYear()} Modus Data — Benkenstrasse 3, 4106 Therwil</p>
-      </footer>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  {description && <meta name="description" content={description}>}
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- REMOVE THIS LINE ENTIRELY: <link rel="stylesheet" href="/styles/global.css"> -->
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href={locale === 'de' ? '/de/' : '/'}>
+        <img class="logo" src="/img/MD_logo.png" alt="Modus Data logo">
+        <div>
+          <strong>Modus Data</strong>
+          <span>Therwil · Switzerland</span>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <!-- Structural Fix: Map explicitly to individual subpages rather than page anchors -->
+        <a href={locale === 'de' ? '/de/services/' : '/services/'}>{nav.services}</a>
+        <a href={locale === 'de' ? '/de/about/' : '/about/'}>{nav.about}</a>
+        <a href={locale === 'de' ? '/de/#about' : '/#about'}>{nav.contact}</a>
+      </nav>
+      <a class="lang-switch" href={switchUrl}>{langSwitch}</a>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Modus Data — Benkenstrasse 3, 4106 Therwil</p>
+    </footer>
+  </div>
+</body>
 </html>
