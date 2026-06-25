@@ -33,9 +33,6 @@ jobs:
       - name: Build Astro site
         run: npm run build
         
-      - name: Copy built files into docs/
-        run: npm run prepare-docs
-        
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"

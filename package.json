@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prepare-docs": "node scripts/copy-docs.js",
     "deploy": "npm run build && npm run prepare-docs"
   },
   "dependencies": {
