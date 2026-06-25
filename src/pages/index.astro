@@ -14,12 +14,14 @@ if (!frontpageEntry) {
 const { Content } = await frontpageEntry.render();
 
 // 3. Setup your language dictionary data
-if (!content.de) {
-  throw new Error('Content for German is not available');
+if (!content.en) {
+  throw new Error('Content for English is not available');
 }
-const data = content.de;
+// FIX 1: Point to content.en so the header/footer text loads in English
+const data = content.en;
 ---
-<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="de" switchUrl="/" langSwitch={data.languageSwitch} nav={data.nav}>
+<!-- FIX 2 & 3: Updated locale to "en" and switchUrl to forward to your German index "/de/" -->
+<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
   <div class="markdown-content">
     <Content />
   </div>

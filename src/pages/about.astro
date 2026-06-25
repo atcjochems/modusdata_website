@@ -5,6 +5,10 @@ import { content } from '../data/content';
 const pages = await import.meta.glob('../content/pages/*.md', { eager: true });
 const about = pages['../content/pages/about.md'] as any;
 
+// FIX: Extract the default export and assign it to a Capitalized variable 
+// so Astro knows to treat and render it as an HTML element component.
+const AboutContent = about.default;
+
 const data = content.en;
 ---
 
@@ -16,7 +20,9 @@ const data = content.en;
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  <div set:html={about.default} />
+  <div class="markdown-content">
+    <AboutContent />
+  </div>
 </BaseLayout>
 
 <style>

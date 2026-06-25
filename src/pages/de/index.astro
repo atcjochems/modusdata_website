@@ -1,6 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { content } from '../../data/content';
+// FIX 1: Import Astro's safe collection loader
+import { getEntry } from 'astro:content';
+
+// FIX 2: Fetch the markdown entry safely using Content Collections
+const frontpageEntry = await getEntry('pages', 'frontpage');
+if (!frontpageEntry) {
+  throw new Error('Could not find src/content/pages/frontpage.md');
+}
+
+// FIX 3: Render the markdown body to an HTML component tag
+const { Content } = await frontpageEntry.render();
+
+if (!content.de) {
+  throw new Error('Content for German is not available');
+}
 const data = content.de;
 ---
 <BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="de" switchUrl="/" langSwitch={data.languageSwitch} nav={data.nav}>
@@ -9,6 +24,11 @@ const data = content.de;
     <h1>{data.title}</h1>
     <p>{data.hero}</p>
   </section>
+
+  <!-- FIX 4: Render the global markdown copy here via the portal slot -->
+  <div class="markdown-content">
+    <Content />
+  </div>
 
   <section id="services" class="section">
     <h2>{data.servicesIntro}</h2>

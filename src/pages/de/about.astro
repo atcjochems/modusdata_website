@@ -5,6 +5,9 @@ import { content } from '../../data/content';
 const pages = await import.meta.glob('../../content/pages/*.md', { eager: true });
 const about = pages['../../content/pages/about.md'] as any;
 
+// FIX: Convert the markdown factory export into a capitalized component variable
+const AboutContent = about.default;
+
 const data = content.de;
 ---
 
@@ -16,7 +19,9 @@ const data = content.de;
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  <div set:html={about.default} />
+  <div class="markdown-content">
+    <AboutContent />
+  </div>
 </BaseLayout>
 
 <style>

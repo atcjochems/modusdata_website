@@ -5,6 +5,9 @@ import { content } from '../../data/content';
 const pages = await import.meta.glob('../../content/pages/*.md', { eager: true });
 const services = pages['../../content/pages/services.md'] as any;
 
+// FIX: Extract component factory into a capitalized variable
+const ServicesContent = services.default;
+
 const data = content.de;
 ---
 
@@ -16,7 +19,10 @@ const data = content.de;
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  <div set:html={services.default} />
+  <div class="markdown-content">
+    <!-- FIX: Render cleanly as an HTML element tag -->
+    <ServicesContent />
+  </div>
 </BaseLayout>
 
 <style>
