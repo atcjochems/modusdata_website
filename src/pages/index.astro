@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { content } from '../../data/content';
+
+// FIX 1: Path resolution & Case Sensitivity
+// If your 'data' folder is inside 'src/', you only need to go up one level ('../'), not two ('../../').
+// CRITICAL: Ensure the folder and file names match your repository's casing exactly (e.g., 'data' vs 'Data').
+import { content } from '../data/content';
+
+// FIX 2: Missing Import
+// You are calling 'frontpage.default' below, but it was never imported.
+// Change this path to match wherever your frontpage markdown/content file actually lives.
+import * as frontpage from '../data/frontpage.md';
 
 // Check if content.de exists
 if (!content.de) {
@@ -119,4 +128,3 @@ const data = content.de;
     margin: 2rem 0;
   }
 </style>
-
