@@ -17,10 +17,10 @@ const { Content } = await frontpageEntry.render();
 if (!content.en) {
   throw new Error('Content for English is not available');
 }
-// FIX 1: Point to content.en so the header/footer text loads in English
+// Point to content.en so the header/footer text loads in English
 const data = content.en;
 ---
-<!-- FIX 2 & 3: Updated locale to "en" and switchUrl to forward to your German index "/de/" -->
+<!-- Updated locale to "en" and switchUrl to forward to your German index "/de/" -->
 <BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
   <div class="markdown-content">
     <Content />
@@ -28,109 +28,84 @@ const data = content.en;
 </BaseLayout>
 
 <style>
-  :global(h1) {
+  /* --- Markdown Render Engine Core Styles --- */
+  .markdown-content {
+    margin: 2rem 0 4rem 0;
+  }
+
+  /* Target headers generated dynamically inside the markdown block wrapper */
+  .markdown-content :global(h1) {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111827;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .markdown-content :global(h2) {
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: #111827;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .markdown-content :global(h3) {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #111827;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   
-  :global(h2) {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+  .markdown-content :global(p) {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    max-width: 44rem; /* Keeps reading line length optimized */
   }
-  
-  :global(h3) {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  :global(p) {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  :global(ul) {
+
+  .markdown-content :global(ul) {
     margin-left: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   
-  :global(li) {
+  .markdown-content :global(li) {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #4b5563;
     margin-bottom: 0.5rem;
   }
 
-  :global(a) {
+  .markdown-content :global(a) {
     color: var(--accent-color, #0066cc);
     text-decoration: none;
+    font-weight: 500;
   }
 
-  :global(a:hover) {
+  .markdown-content :global(a:hover) {
     text-decoration: underline;
   }
 
-  :global(blockquote) {
+  .markdown-content :global(blockquote) {
     border-left: 4px solid var(--accent-color, #0066cc);
-    margin-left: 0;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    font-style: italic;
+    margin: 2rem 0;
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    background-color: #f9fafb;
+    border-radius: 0 4px 4px 0;
   }
 
-  :global(hr) {
+  .markdown-content :global(blockquote p) {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #4b5563;
+  }
+
+  .markdown-content :global(hr) {
     border: none;
     border-top: 1px solid #e5e7eb;
-    margin: 2rem 0;
-  }
-</style>
-
-<style>
-  :global(.markdown-content h1) {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(.markdown-content h2) {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(.markdown-content h3) {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  :global(.markdown-content p) {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  :global(.markdown-content ul) {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  :global(.markdown-content li) {
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.markdown-content a) {
-    color: var(--accent-color, #0066cc);
-    text-decoration: none;
-  }
-
-  :global(.markdown-content a:hover) {
-    text-decoration: underline;
-  }
-
-  :global(.markdown-content blockquote) {
-    border-left: 4px solid var(--accent-color, #0066cc);
-    margin-left: 0;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    font-style: italic;
-  }
-
-  :global(.markdown-content hr) {
-    border: none;
-    border-top: 1px solid #e5e7eb;
-    margin: 2rem 0;
+    margin: 3rem 0;
   }
 </style>
