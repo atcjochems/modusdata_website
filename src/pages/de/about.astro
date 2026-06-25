@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { content } from '../../data/content';
-import AboutContent from '../../../docs/about.md';
+import { getCollection } from 'astro:content';
 
 const data = content.de;
+const page = await getCollection('pages').then(pages => pages.find(p => p.id === 'about.md'));
+const { Content } = page ? await page.render() : { Content: null };
 ---
 
 <BaseLayout 
@@ -14,10 +16,54 @@ const data = content.de;
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  <div class="markdown-content">
-    <AboutContent />
-  </div>
+  {Content && <Content />}
 </BaseLayout>
+
+<style>
+  :global(h1) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  :global(h2) {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  :global(h3) {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  :global(ul) {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  :global(a) {
+    color: var(--accent-color, #0066cc);
+    text-decoration: none;
+  }
+
+  :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  :global(img) {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+</style>
 
 <style>
   :global(.markdown-content h1) {

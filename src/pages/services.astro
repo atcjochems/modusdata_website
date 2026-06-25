@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { content } from '../data/content';
-import ServicesContent from '../../docs/services.md';
+import { getCollection } from 'astro:content';
 
 const data = content.en;
+const page = await getCollection('pages').then(pages => pages.find(p => p.id === 'services.md'));
+const { Content } = page ? await page.render() : { Content: null };
 ---
 
 <BaseLayout 
@@ -14,10 +16,48 @@ const data = content.en;
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  <div class="markdown-content">
-    <ServicesContent />
-  </div>
+  {Content && <Content />}
 </BaseLayout>
+
+<style>
+  :global(h1) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  :global(h2) {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  :global(h3) {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  :global(ul) {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  :global(a) {
+    color: var(--accent-color, #0066cc);
+    text-decoration: none;
+  }
+
+  :global(a:hover) {
+    text-decoration: underline;
+  }
+</style>
 
 <style>
   :global(.markdown-content h1) {
