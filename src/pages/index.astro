@@ -1,13 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { content } from '../data/content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
 
-const pages = await import.meta.glob('../content/pages/*.md', { eager: true });
-const frontpage = pages['../content/pages/frontpage.md'] as any;
-
-const data = content.en;
+// Check if content.de exists
+if (!content.de) {
+  throw new Error('Content for German is not available');
+}
+const data = content.de;
 ---
-<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
+<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="de" switchUrl="/" langSwitch={data.languageSwitch} nav={data.nav}>
   <div set:html={frontpage.default} />
 </BaseLayout>
 
@@ -118,3 +119,4 @@ const data = content.en;
     margin: 2rem 0;
   }
 </style>
+
