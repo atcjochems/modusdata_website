@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { content } from '../../data/content';
-import { getCollection } from 'astro:content';
+import ServicesPage from '../services.md';
 
 const data = content.de;
-const page = await getCollection('pages').then(pages => pages.find(p => p.id === 'services'));
-const { Content } = page ? await page.render() : { Content: null };
+const { Content } = ServicesPage;
 ---
 
 <BaseLayout 
@@ -16,7 +15,7 @@ const { Content } = page ? await page.render() : { Content: null };
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  {Content && <Content />}
+  <Content />
 </BaseLayout>
 
 <style>
