@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { content } from '../data/content';
-import { getEntry } from 'astro:content';
+
+const pages = await import.meta.glob('../content/pages/*.md', { eager: true });
+const frontpage = pages['../content/pages/frontpage.md'] as any;
 
 const data = content.en;
-const frontpage = await getEntry('pages', 'frontpage');
-const { Content } = await frontpage.render();
 ---
 <BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
-  <Content />
+  <div set:html={frontpage.default} />
 </BaseLayout>
 
 <style>
