@@ -1,15 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { content } from '../data/content';
+// FIX: Changed '../' to '../../' to escape the /de/ folder correctly
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
 import { getEntry } from 'astro:content';
 
 const servicesEntry = await getEntry('pages', 'services');
 if (!servicesEntry) throw new Error('Could not find services markdown');
 const { Content } = await servicesEntry.render();
 
-const data = content.de; // Use content.de for German subpages
+const data = content.de;
 ---
-<BaseLayout title={`${data.nav.services} | Modus Data`} locale="en" switchUrl="/de/services/" langSwitch={data.languageSwitch} nav={data.nav}>
+<!-- FIX: Set locale to "de" and switchUrl back to the English route "/services/" -->
+<BaseLayout title={`${data.nav.services} | Modus Data`} locale="de" switchUrl="/services/" langSwitch={data.languageSwitch} nav={data.nav}>
   <div class="markdown-content">
     <Content />
   </div>
