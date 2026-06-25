@@ -1,15 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { content } from '../data/content';
-import { getCollection } from 'astro:content';
+import Frontpage from '../content/pages/frontpage.md';
 
 const data = content.en;
-const pages = await getCollection('pages');
-const page = pages.find(p => p.id === 'frontpage');
-const { Content } = page ? await page.render() : { Content: null };
 ---
 <BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
-  {Content ? <Content /> : null}
+  <Frontpage.Content />
 </BaseLayout>
 
 <style>
