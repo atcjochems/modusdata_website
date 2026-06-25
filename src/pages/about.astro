@@ -1,12 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { content } from '../data/content';
-import FrontpageContent from '../../docs/frontpage.md';
+import AboutContent from '../../docs/about.md';
+
 const data = content.en;
 ---
-<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
+
+<BaseLayout 
+  title={data.nav.about + ' | ' + data.title}
+  description="About Arthur Jochems and Modus Data"
+  locale="en" 
+  switchUrl="/de/about/" 
+  langSwitch={data.languageSwitch}
+  nav={data.nav}
+>
   <div class="markdown-content">
-    <FrontpageContent />
+    <AboutContent />
   </div>
 </BaseLayout>
 
@@ -49,17 +58,9 @@ const data = content.en;
     text-decoration: underline;
   }
 
-  :global(.markdown-content blockquote) {
-    border-left: 4px solid var(--accent-color, #0066cc);
-    margin-left: 0;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    font-style: italic;
-  }
-
-  :global(.markdown-content hr) {
-    border: none;
-    border-top: 1px solid #e5e7eb;
-    margin: 2rem 0;
+  :global(.markdown-content img) {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
   }
 </style>

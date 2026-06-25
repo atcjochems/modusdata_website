@@ -1,12 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { content } from '../data/content';
-import FrontpageContent from '../../docs/frontpage.md';
-const data = content.en;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import ServicesContent from '../../../docs/services.md';
+
+const data = content.de;
 ---
-<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
+
+<BaseLayout 
+  title={data.nav.services + ' | ' + data.title}
+  description="Unsere AI- und Machine-Learning-Services"
+  locale="de" 
+  switchUrl="/services/" 
+  langSwitch={data.languageSwitch}
+  nav={data.nav}
+>
   <div class="markdown-content">
-    <FrontpageContent />
+    <ServicesContent />
   </div>
 </BaseLayout>
 
@@ -47,19 +56,5 @@ const data = content.en;
 
   :global(.markdown-content a:hover) {
     text-decoration: underline;
-  }
-
-  :global(.markdown-content blockquote) {
-    border-left: 4px solid var(--accent-color, #0066cc);
-    margin-left: 0;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    font-style: italic;
-  }
-
-  :global(.markdown-content hr) {
-    border: none;
-    border-top: 1px solid #e5e7eb;
-    margin: 2rem 0;
   }
 </style>
