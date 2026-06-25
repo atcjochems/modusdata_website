@@ -1,24 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-// FIX 1: Path resolution & Case Sensitivity
-// If your 'data' folder is inside 'src/', you only need to go up one level ('../'), not two ('../../').
-// CRITICAL: Ensure the folder and file names match your repository's casing exactly (e.g., 'data' vs 'Data').
 import { content } from '../data/content';
+// Import Astro's safe collection loader
+import { getEntry } from 'astro:content';
 
-// FIX 2: Missing Import
-// You are calling 'frontpage.default' below, but it was never imported.
-// Change this path to match wherever your frontpage markdown/content file actually lives.
-import * as frontpage from '../data/frontpage.md';
+// 1. Fetch the markdown data safely using Astro Content Collections
+const frontpageEntry = await getEntry('pages', 'frontpage');
+if (!frontpageEntry) {
+  throw new Error('Could not find src/content/pages/frontpage.md');
+}
 
-// Check if content.de exists
+// 2. Render the markdown body to HTML component text
+const { Content } = await frontpageEntry.render();
+
+// 3. Setup your language dictionary data
 if (!content.de) {
   throw new Error('Content for German is not available');
 }
 const data = content.de;
 ---
 <BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="de" switchUrl="/" langSwitch={data.languageSwitch} nav={data.nav}>
-  <div set:html={frontpage.default} />
+  <div class="markdown-content">
+    <Content />
+  </div>
 </BaseLayout>
 
 <style>
