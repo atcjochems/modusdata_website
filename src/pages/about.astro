@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { content } from '../data/content';
-import about from '../content/pages/about.md';
+import { getEntry } from 'astro:content';
 
 const data = content.en;
+const about = await getEntry('pages', 'about');
+const { Content } = await about.render();
 ---
 
 <BaseLayout 
@@ -14,7 +16,7 @@ const data = content.en;
   langSwitch={data.languageSwitch}
   nav={data.nav}
 >
-  <div set:html={about.html} />
+  <Content />
 </BaseLayout>
 
 <style>
