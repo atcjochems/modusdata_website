@@ -1,29 +1,15 @@
----
 // 1. IMPORT THE GLOBAL CSS DIRECTLY IN THE FRONTMATTER
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
-  locale: string;
-  switchUrl: string;
-  langSwitch: string;
-  nav: {
-    services: string;
-    about: string;
-    contact: string;
-  };
 }
 
-const { title, description, locale, switchUrl, langSwitch, nav } = Astro.props;
-
-// Determine WHICH flag to show based on the page's current locale.
-// Since clicking the toggle takes you to the *other* language, the button 
-// should show the flag of the target language.
-const targetLanguage = locale === 'de' ? 'en' : 'de';
+const { title, description } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang={locale}>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +23,7 @@ const targetLanguage = locale === 'de' ? 'en' : 'de';
 <body>
   <div class="page-shell">
     <header class="site-header">
-      <a class="brand" href={locale === 'de' ? '/de/' : '/'}>
+      <a class="brand" href="/">
         <img class="logo" src="/img/MD_logo.png" alt="Modus Data logo">
         <div>
           <strong>Modus Data</strong>
@@ -45,31 +31,10 @@ const targetLanguage = locale === 'de' ? 'en' : 'de';
         </div>
       </a>
       <nav class="site-nav">
-        <a href={locale === 'de' ? '/de/services/' : '/services/'}>{nav.services}</a>
-        <a href={locale === 'de' ? '/de/about/' : '/about/'}>{nav.about}</a>
-        <a href={locale === 'de' ? '/de/#about' : '/#about'}>{nav.contact}</a>
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/#about">Contact</a>
       </nav>
-      
-      {/* Updated Language Switch Link with Dynamic Flag Support */}
-      <a class="lang-switch" href={switchUrl}>
-        {targetLanguage === 'de' ? (
-          /* Swiss flag (or German flag) for Deutsch option */
-          <svg class="flag-icon" viewBox="0 0 512 512" width="16" height="16" aria-hidden="true">
-            <rect width="512" height="512" fill="#d81e05"/>
-            <path d="M256 90h64v102h102v64H320v102h-64V256H154v-64h102z" fill="#fff"/>
-          </svg>
-        ) : (
-          /* UK flag for English option */
-          <svg class="flag-icon" viewBox="0 0 512 512" width="16" height="16" aria-hidden="true">
-            <path d="M0 0h512v512H0z" fill="#002b7f"/>
-            <path d="M0 0l512 512M0 512L512 0" stroke="#fff" stroke-width="60"/>
-            <path d="M0 0l512 512M0 512L512 0" stroke="#ce1124" stroke-width="40"/>
-            <path d="M256 0v512M0 256h512" stroke="#fff" stroke-width="100"/>
-            <path d="M256 0v512M0 256h512" stroke="#ce1124" stroke-width="60"/>
-          </svg>
-        )}
-        <span>{langSwitch}</span>
-      </a>
     </header>
 
     <main>

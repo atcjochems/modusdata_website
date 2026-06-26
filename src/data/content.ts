@@ -23,30 +23,5 @@ export const content = {
       about: 'About',
       contact: 'Contact'
     }
-  },
-  de: {
-    title: 'Modus Data',
-    subtitle: 'Schweizer KI- und Data-Science-Beratung für Pharma, Gesundheit und Life Sciences.',
-    hero: 'Modus Data bietet pragmatische KI-, Machine-Learning- und Data-Engineering-Dienstleistungen von Therwil, Schweiz. Unser Gründer verfügt über mehr als 10 Jahre Erfahrung in Unternehmens-KI für regulierte Branchen, mit starkem Fokus auf Pharma, medizinische Daten und produktionsreife Generative-AI-Workflows.',
-    servicesIntro: 'Wir unterstützen Schweizer Unternehmen mit:',
-    services: [
-      'Generative KI- und LLM-Lösungen für Wissensabruf und intelligente Automatisierung.',
-      'Datenplattform-Design, MLOps und sichere KI-Bereitstellung in regulierten Umgebungen.',
-      'Pharma-Datenengineering, klinische Evidenz-Pipelines und medizinische Textanalyse.',
-      'Vom Prototyp zur Produktion: KI-Implementierungen mit Azure, Python, Databricks und Open-Source-Modellen.',
-    ],
-    aboutTitle: 'Über Modus Data',
-    aboutText: 'Modus Data ist ein Schweizer Unternehmen mit Sitz in der Benkenstrasse 3, 4106 Therwil. Gründer Arthur Jochems ist Senior Data Scientist und AI Engineer mit einem PhD in Neurowissenschaften und über zehn Jahren Erfahrung in Pharma, Gesundheitswesen, Regierung und Telekommunikation. Seine Arbeit umfasst LLM-Optimierung für Roche, RAG-Systeme, AI-gestützte Drug-Data-Pipelines und Enterprise-KI-Produktionslösungen für Kunden wie Daiichi Sankyo.',
-    contactTitle: 'Kontakt',
-    contactText: 'Kontaktieren Sie uns für KI-Beratung, Data-Science-Projekte und Unterstützung im Schweizer Markt.',
-    addressLines: ['Benkenstrasse 3', '4106 Therwil', 'Schweiz'],
-    email: 'arthur@modusdata.ch',
-    languageSwitch: 'English',
-    nav: {
-      home: 'Start',
-      services: 'Services',
-      about: 'Über uns',
-      contact: 'Kontakt'
-    }
   }
 };

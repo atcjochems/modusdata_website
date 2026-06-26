@@ -17,11 +17,11 @@ const { Content } = await frontpageEntry.render();
 if (!content.en) {
   throw new Error('Content for English is not available');
 }
-// Point to content.en so the header/footer text loads in English
+// Point directly to English content for metadata mapping
 const data = content.en;
 ---
-<!-- Updated locale to "en" and switchUrl to forward to your German index "/de/" -->
-<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero} locale="en" switchUrl="/de/" langSwitch={data.languageSwitch} nav={data.nav}>
+
+<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero}>
   <div class="markdown-content">
     <Content />
   </div>
