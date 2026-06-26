@@ -10,7 +10,7 @@ I am Dr. Arthur Jochems, a senior data scientist, AI engineer, and the founder o
 Developer Note: Place your profile photo here. 
 Recommended class: rounded-lg shadow-md max-w-sm mx-auto block
 -->
-![Arthur Jochems, PhD](/img/photo jochems.jpg)
+![Arthur Jochems, PhD](/img/photo-jochems.jpg)
 
 ### Academic Rigor Meets Enterprise Execution
 
