@@ -186,6 +186,8 @@ footer.site-footer {
   filter: grayscale(70%);
   transition: all 0.3s ease;
   opacity: 0.85;
+  display: block;           /* Prevents inline text rendering issues */
+  flex-shrink: 0;
 }
 
 .logo-track img:hover {
@@ -213,14 +215,9 @@ footer.site-footer {
     gap: 2rem;
     animation-duration: 28s;
   }
-}
-.logo-track img {
-  height: 52px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  filter: grayscale(70%);
-  transition: all 0.3s ease;
-  opacity: 0.85;
-  display: inline-block; /* Ensures no text nodes leak */
+  
+  .logo-track img {
+    height: 42px;
+    max-width: 130px;
+  }
 }
