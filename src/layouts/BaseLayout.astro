@@ -16,6 +16,11 @@ interface Props {
 }
 
 const { title, description, locale, switchUrl, langSwitch, nav } = Astro.props;
+
+// Determine WHICH flag to show based on the page's current locale.
+// Since clicking the toggle takes you to the *other* language, the button 
+// should show the flag of the target language.
+const targetLanguage = locale === 'de' ? 'en' : 'de';
 ---
 <!DOCTYPE html>
 <html lang={locale}>
@@ -28,8 +33,6 @@ const { title, description, locale, switchUrl, langSwitch, nav } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- REMOVE THIS LINE ENTIRELY: <link rel="stylesheet" href="/styles/global.css"> -->
 </head>
 <body>
   <div class="page-shell">
@@ -42,12 +45,31 @@ const { title, description, locale, switchUrl, langSwitch, nav } = Astro.props;
         </div>
       </a>
       <nav class="site-nav">
-        <!-- Structural Fix: Map explicitly to individual subpages rather than page anchors -->
         <a href={locale === 'de' ? '/de/services/' : '/services/'}>{nav.services}</a>
         <a href={locale === 'de' ? '/de/about/' : '/about/'}>{nav.about}</a>
         <a href={locale === 'de' ? '/de/#about' : '/#about'}>{nav.contact}</a>
       </nav>
-      <a class="lang-switch" href={switchUrl}>{langSwitch}</a>
+      
+      {/* Updated Language Switch Link with Dynamic Flag Support */}
+      <a class="lang-switch" href={switchUrl}>
+        {targetLanguage === 'de' ? (
+          /* Swiss flag (or German flag) for Deutsch option */
+          <svg class="flag-icon" viewBox="0 0 512 512" width="16" height="16" aria-hidden="true">
+            <rect width="512" height="512" fill="#d81e05"/>
+            <path d="M256 90h64v102h102v64H320v102h-64V256H154v-64h102z" fill="#fff"/>
+          </svg>
+        ) : (
+          /* UK flag for English option */
+          <svg class="flag-icon" viewBox="0 0 512 512" width="16" height="16" aria-hidden="true">
+            <path d="M0 0h512v512H0z" fill="#002b7f"/>
+            <path d="M0 0l512 512M0 512L512 0" stroke="#fff" stroke-width="60"/>
+            <path d="M0 0l512 512M0 512L512 0" stroke="#ce1124" stroke-width="40"/>
+            <path d="M256 0v512M0 256h512" stroke="#fff" stroke-width="100"/>
+            <path d="M256 0v512M0 256h512" stroke="#ce1124" stroke-width="60"/>
+          </svg>
+        )}
+        <span>{langSwitch}</span>
+      </a>
     </header>
 
     <main>
@@ -60,3 +82,30 @@ const { title, description, locale, switchUrl, langSwitch, nav } = Astro.props;
   </div>
 </body>
 </html>
+
+<style>
+  /* Alignment styling for the language switcher link */
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between flag and text */
+    text-decoration: none;
+    font-weight: 500;
+    color: #374151;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .lang-switch:hover {
+    background-color: #f3f4f6;
+    color: var(--accent-color, #0066cc);
+  }
+
+  /* Flag standard shape configuration */
+  .flag-icon {
+    border-radius: 2px; /* Subtle soft corner rounding */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Gives thin contrast depth on white backgrounds */
+    flex-shrink: 0;
+  }
+</style>
