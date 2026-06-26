@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const contactEntry = await getEntry('pages', 'contact');
+if (!contactEntry) throw new Error('Could not find contact markdown');
+
+const { Content } = await contactEntry.render();
+
+const title = "Contact | Modus Data";
+---
+
+<BaseLayout 
+  title={title}
+  description="Contact Modus Data for expert AI consulting and data science services in Switzerland."
+>
+  <div class="markdown-content contact-page">
+    <Content />
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-page {
+    max-width: 680px;
+    margin: 3rem auto;
+  }
+
+  .markdown-content h1 {
+    font-size: 2.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+  }
+
+  .markdown-content p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+</style>
