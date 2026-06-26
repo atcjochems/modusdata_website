@@ -60,8 +60,7 @@ An AI model is only as good as its deployment. We build the infrastructure, data
     <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
     <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
     <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
-    
-    <!-- Duplicate for seamless infinite loop -->
+    <!-- Duplicates for seamless infinite scroll -->
     <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
     <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
     <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
