@@ -1,0 +1,35 @@
+---
+interface Props {
+  items?: Array<{ title: string; text: string; img?: string }>
+}
+const { items = [] } = Astro.props;
+---
+<section class="widget-features">
+  <div class="widget-inner">
+    {items.length ? (
+      items.map(item => (
+        <article class="feature-compact">
+          {item.img && <img src={item.img} alt={item.title} />}
+          <div>
+            <h4>{item.title}</h4>
+            <p>{item.text}</p>
+          </div>
+        </article>
+      ))
+    ) : (
+      <div class="placeholder">
+        <h3>Features</h3>
+        <p>Feature components are scaffolded and ready. Provide `items` prop to populate them.</p>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+.widget-features { margin-top: 2rem; }
+.widget-inner { display:flex; gap:1rem; flex-wrap:wrap; }
+.feature-compact { display:flex; gap:0.9rem; align-items:flex-start; background:transparent; padding:0.6rem; border-radius:10px; }
+.feature-compact img { width:72px; height:72px; object-fit:cover; border-radius:8px; }
+.feature-compact h4 { margin:0 0 0.25rem 0; }
+.placeholder { color: var(--color-muted); }
+</style>

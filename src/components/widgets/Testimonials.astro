@@ -1,0 +1,8 @@
+---
+interface Testimonial { name: string; role?: string; quote: string }
+const testimonials: Testimonial[] = Astro.props.testimonials || [
+  { name: 'R. Client', role: 'Director, Data', quote: 'Modus Data delivered a production ML pipeline that scaled.' },
+  { name: 'M. Partner', role: 'Head of AI', quote: 'Robust and reliable — highly recommended.' }
+];
+---
+<!-- Testimonials removed per user request; component left for reuse if needed -->
