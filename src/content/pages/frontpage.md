@@ -20,17 +20,68 @@ Modus Data designs, builds, and deploys custom AI systems built for mission-crit
 
 ## Core Focus Areas
 
-### 1. LLMs & Document Intelligence
-Transforming unstructured data into verified, compliant business logic. We design specialized generative AI pipelines that detect granular errors, automate complex compliance checks, and summarize high-stakes regulatory documentation.
+<section class="feature-grid">
+  <article class="feature">
+    <div class="feature-image">
+      <img src="/img/assets/llm_doc_int.jpg" alt="Document intelligence" />
+    </div>
+    <div class="feature-body">
+      <h3>LLMs & Document Intelligence</h3>
+      <p>Transforming unstructured data into verified, compliant business logic. We design specialized generative AI pipelines that detect granular errors, automate complex compliance checks, and summarize high-stakes regulatory documentation.</p>
+      <ul class="feature-list">
+        <li>Retrieval-augmented generation (RAG) and verifiable sources</li>
+        <li>Automated compliance-checking pipelines</li>
+        <li>Custom fine-tuning and safety layers</li>
+      </ul>
+    </div>
+  </article>
 
-### 2. Predictive Modeling & Deep Learning
-Going beyond basic regressions. We deploy sophisticated architectures like Temporal Convolutional Networks (TCNs) and Gated Recurrent Units (GRUs) to solve complex time-series forecasting, fraud detection, and multi-modal classification problems.
+  <article class="feature reverse">
+    <div class="feature-image">
+      <img src="/img/assets/pred_mod.jpg" alt="Predictive modeling" />
+    </div>
+    <div class="feature-body">
+      <h3>Predictive Modeling & Deep Learning</h3>
+      <p>Going beyond basic regressions. We deploy sophisticated architectures like Temporal Convolutional Networks (TCNs) and Gated Recurrent Units (GRUs) to solve complex time-series forecasting, fraud detection, and multi-modal classification problems.</p>
+      <ul class="feature-list">
+        <li>Time-series forecasting at scale</li>
+        <li>Deep learning architectures and training pipelines</li>
+        <li>Model explainability and validation</li>
+      </ul>
+    </div>
+  </article>
 
-### 3. Machine Learning & Data Analytics for Business Impact
-Translating complex data landscapes into clear strategic value. We bridge the gap between low-level engineering and executive execution, transforming raw data matrices into optimized organizational roadmaps and measurable cost reductions.
+  <article class="feature">
+    <div class="feature-image">
+      <img src="/img/assets/analytics.jpg" alt="Data analytics" />
+    </div>
+    <div class="feature-body">
+      <h3>Machine Learning & Data Analytics for Business Impact</h3>
+      <p>Translating complex data landscapes into clear strategic value. We bridge the gap between low-level engineering and executive execution, transforming raw data matrices into optimized organizational roadmaps and measurable cost reductions.</p>
+      <ul class="feature-list">
+        <li>Data platform design and ETL</li>
+        <li>Custom analytics and KPI pipelines</li>
+        <li>Actionable, board-ready reporting</li>
+      </ul>
+    </div>
+  </article>
 
-### 4. MLOps & Production Deployment
-An AI model is only as good as its deployment. We build the infrastructure, data pipelines, and validation frameworks required to monitor, update, and secure your models in production environments.
+  <article class="feature reverse">
+    <div class="feature-image">
+      <img src="/img/assets/mlops.jpg" alt="MLOps" />
+    </div>
+    <div class="feature-body">
+      <h3>MLOps & Production Deployment</h3>
+      <p>An AI model is only as good as its deployment. We build the infrastructure, data pipelines, and validation frameworks required to monitor, update, and secure your models in production environments.</p>
+      <ul class="feature-list">
+        <li>Robust CI/CD and model rollout strategies</li>
+        <li>Monitoring, drift detection, and retraining</li>
+        <li>Secure deployments for regulated industries</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
 
 ---
 
