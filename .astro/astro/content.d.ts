@@ -162,6 +162,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"master-data-reconciliation.md": {
+	id: "master-data-reconciliation.md";
+  slug: "master-data-reconciliation";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "services.md": {
 	id: "services.md";
   slug: "services";
@@ -179,5 +186,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../../src/content/config.js");
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }

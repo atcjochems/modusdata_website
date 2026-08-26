@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'master-data-reconciliation');
+if (!postEntry) throw new Error('Could not find master-data-reconciliation markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Solving the Post-M&A Master Data Bottleneck | ${data.title}`}
+  description="A case study in harmonizing SAP, Dynamics and Salesforce master data with entity resolution."
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

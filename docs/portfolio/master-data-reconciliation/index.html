@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Solving the Post-M&amp;A Master Data Bottleneck | Modus Data</title><meta name="description" content="A case study in harmonizing SAP, Dynamics and Salesforce master data with entity resolution."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/about.-yeN7sNI.css"></head> <body> <div class="site-shell"> <header class="site-header"> <a class="brand" href="/"> <img class="brand-logo" src="/img/MD_logo.png" alt="Modus Data logo"> <span class="brand-copy"> <strong>Modus Data</strong> <small>Production-grade AI</small> </span> </a> <nav class="site-nav" aria-label="Primary navigation"> <a href="/">Home</a><a href="/services/">Services</a><a href="/portfolio/">Portfolio</a><a href="/about/">About</a><a href="/contact/">Contact</a> </nav> </header> <main class="site-main">  <article class="markdown-content portfolio-article"> <a class="back-link" href="/portfolio/">← Back to portfolio</a> <h1>Solving the Post-M&amp;A Master Data Bottleneck</h1> <p class="post-kicker">Data engineering · Operational integration</p>
+<p>When companies undergo rapid acquisitions, leadership expects quick synergies across sales, operations and finance. Underneath the surface, engineering and data teams face a glaring operational hurdle: <strong>disparate enterprise systems that simply do not speak to one another.</strong></p>
+<p>Imagine trying to fit two misaligned puzzle pieces together. On one side, legacy enterprise setups like SAP S/4HANA store transactional records with structured Business Partner schemas (<code>BUT000</code>). On the other, an acquired unit may run Microsoft Dynamics NAV or Salesforce CRM, with local variants of customer names, localized tax IDs (<code>USt-IdNr.</code>, <code>CREFO</code>) and inconsistent legal form conventions (<code>GmbH</code>, <code>AG</code>, <code>Ltd.</code>).</p>
+<p>Without a unified view of master data, basic business questions become complex challenges:</p>
+<ul>
+<li><em>Who are our top 20 global accounts across all acquired subsidiaries?</em></li>
+<li><em>Are we running duplicate sales campaigns or offering conflicting credit terms to the same customer?</em></li>
+<li><em>How can we reliably aggregate sales pipelines during M&#x26;A integration?</em></li>
+</ul>
+<p><img src="/img/assets/post_sap_sf_linker/post_img2.jpeg" alt="SAP and Salesforce data represented as connected puzzle pieces"></p>
+<h2 id="the-challenge-why-naive-matching-fails">The challenge: why naive matching fails</h2>
+<p>Manual cleanup or basic exact-string SQL joins fail almost instantly in real-world enterprise environments:</p>
+<ol>
+<li><strong>Naming inconsistencies and abbreviations:</strong> “company_name Agribusiness Switzerland AG” in SAP might appear as “company_name Agri Swiss S.A.” or “company_name AG” in an acquired Dynamics NAV or Salesforce instance.</li>
+<li><strong>Local identifier discrepancies:</strong> Tax IDs, IBANs and registration numbers are often missing, partially entered or formatted differently across regions.</li>
+<li><strong>High volume and computational overhead:</strong> Raw fuzzy matching across millions of customer records creates a severe performance bottleneck.</li>
+</ol>
+<h2 id="the-architecture-a-deterministic-and-ai-assisted-pipeline">The architecture: a deterministic and AI-assisted pipeline</h2>
+<p>To solve this sustainably without expensive legacy MDM lock-in, we build lightweight, scalable, local Python-native entity resolution pipelines using tools such as <code>pandas</code>, <code>polars</code>, <code>DuckDB</code> and modern LLM capabilities.</p>
+<p><img src="/img/assets/post_sap_sf_linker/post_img1.jpeg" alt="Automated data reconciliation pipeline architecture"></p>
+<h3 id="1-data-profiling-and-normalization">1. Data profiling and normalization</h3>
+<p>Before comparing records, standardize the input attributes:</p>
+<ul>
+<li><strong>Legal form extraction:</strong> Strip and categorize company suffixes such as <code>GmbH</code>, <code>AG</code>, <code>Co. KG</code> and <code>Inc.</code></li>
+<li><strong>Address and phone normalization:</strong> Standardize international country codes, postcodes and street abbreviations.</li>
+<li><strong>String cleaning:</strong> Lowercase, remove special characters and convert localized characters, for example German umlauts (<code>ä/ö/ü</code>) to (<code>ae/oe/ue</code>).</li>
+</ul>
+<h3 id="2-record-blocking-and-grouping">2. Record blocking and grouping</h3>
+<p>To avoid checking every SAP record against every Dynamics NAV or Salesforce record, apply blocking strategies. Group entities by geographic region, postal code, phonetic index such as Metaphone or Soundex, or normalized prefix keys. This can narrow candidate pairs by more than 95 percent and drastically reduce compute overhead.</p>
+<h3 id="3-multi-feature-similarity-scoring">3. Multi-feature similarity scoring</h3>
+<p>Candidates within each block pass through a multi-feature scoring engine:</p>
+<ul>
+<li><strong>Jaro-Winkler and Levenshtein distance:</strong> Weigh similarity across company names.</li>
+<li><strong>Exact matching rules:</strong> Cross-check hard identifiers such as <code>USt-IdNr.</code>, <code>CREFO</code>, <code>IBAN</code> or domestic commercial registry IDs.</li>
+<li><strong>Token set ratio and cosine similarity:</strong> Handle word-order permutations such as “Logistics Global GmbH” and “Global Logistics GmbH”.</li>
+</ul>
+<h3 id="4-deterministic-classification-and-llm-escalation">4. Deterministic classification and LLM escalation</h3>
+<p>Instead of relying purely on fixed thresholds, implement a multi-tiered decision gate:</p>
+<ul>
+<li><strong>High confidence, auto-merge:</strong> High similarity with matching tax or registration IDs. Tag the match in the cross-reference table.</li>
+<li><strong>Uncertain cases, LLM escalation:</strong> Send borderline scores to an LLM agent, such as Claude or OpenAI through custom prompt templates, to assess whether profiles represent the same legal entity.</li>
+<li><strong>Low confidence, reject:</strong> Classify the records as distinct entities.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Conceptual Python workflow (DuckDB / Polars + entity scoring)</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> polars </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pl</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> rapidfuzz </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> fuzz</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> calculate_entity_similarity</span><span style="color:#E1E4E8">(record_sap, record_crm):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name_score </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> fuzz.token_sort_ratio(record_sap[</span><span style="color:#9ECBFF">"company_name"</span><span style="color:#E1E4E8">], record_crm[</span><span style="color:#9ECBFF">"company_name"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">    vat_match </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1.0</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> record_sap[</span><span style="color:#9ECBFF">"vat_id"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> record_sap[</span><span style="color:#9ECBFF">"vat_id"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> record_crm[</span><span style="color:#9ECBFF">"vat_id"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">else</span><span style="color:#79B8FF"> 0.0</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (name_score </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 0.7</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> (vat_match </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 30.0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<h3 id="5-reviewer-ui-and-human-in-the-loop-validation">5. Reviewer UI and human-in-the-loop validation</h3>
+<p>For compliance and edge-case validation, ambiguous pairs escalated by the system are exposed through a lightweight local dashboard, for example Streamlit. Data stewards can approve or reject matches with a single click, creating feedback that improves the scoring weights over time.</p>
+<h2 id="business-impact-and-results">Business impact and results</h2>
+<ul>
+<li><strong>Accelerated time-to-value in M&#x26;A:</strong> Customer data integration timelines shrink from months to days.</li>
+<li><strong>Single source of truth:</strong> Cross-selling metrics become clear across SAP S/4HANA, Salesforce and Microsoft Dynamics datasets.</li>
+<li><strong>Cost efficiency:</strong> Modular Python libraries such as <code>polars</code>, <code>DuckDB</code> and <code>recordlinkage</code> avoid six-figure enterprise MDM platform licenses.</li>
+</ul>
+<blockquote>
+<p>The strongest integration outcomes come from treating entity resolution as a governed product: measurable, reviewable and built for change.</p>
+</blockquote>
+<p><a href="mailto:arthur@modusdata.ch">Discuss a data integration challenge</a></p> </article>  </main> <footer class="site-footer"> <div class="footer-content"> <div> <strong>Modus Data</strong> <p>Pragmatic AI, data engineering and production systems for regulated organizations.</p> </div> <div class="footer-links"> <a href="mailto:arthur@modusdata.ch">Contact</a> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> </div> </div> </footer> </div> </body></html>
