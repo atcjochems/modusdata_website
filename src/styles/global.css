@@ -340,6 +340,35 @@ a {
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
 }
 
+.portfolio-article table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.portfolio-article th,
+.portfolio-article td {
+  min-width: 190px;
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.portfolio-article th {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--color-text);
+}
+
+.portfolio-article .math {
+  font-style: italic;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .post-kicker {
   margin-top: -0.5rem;
   color: var(--color-primary) !important;
