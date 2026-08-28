@@ -84,27 +84,54 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
   /* --- Footer Links Block --- */
   .social-links-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem 1rem;
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
   }
+
   .social-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    color: var(--accent-color, #0066cc);
+    gap: 0.55rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.04);
+    color: var(--color-primary, #2563eb);
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   }
+
   .social-link:hover {
-    text-decoration: underline;
-    color: #004499;
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(37, 99, 235, 0.3);
+    text-decoration: none;
+    transform: translateY(-1px);
   }
+
+  .social-link svg {
+    flex-shrink: 0;
+  }
+
   .social-separator {
-    color: #d1d5db;
+    color: rgba(15, 23, 42, 0.28);
     user-select: none;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    .social-links-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .social-separator {
+      display: none;
+    }
   }
 </style>
