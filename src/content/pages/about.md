@@ -97,7 +97,8 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
-    min-width: 220px;
+    width: 245px;
+    min-width: 245px;
     padding: 0.8rem 1.4rem;
     border: 1px solid rgba(37, 99, 235, 0.18);
     border-radius: 999px;
@@ -106,6 +107,7 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
     text-decoration: none;
     font-weight: 600;
     line-height: 1.2;
+    white-space: nowrap;
     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   }
 
