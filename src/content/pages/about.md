@@ -95,8 +95,10 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
   .social-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    padding: 0.55rem 0.8rem;
+    justify-content: center;
+    gap: 0.7rem;
+    min-width: 180px;
+    padding: 0.7rem 1.1rem;
     border: 1px solid rgba(37, 99, 235, 0.18);
     border-radius: 999px;
     background: rgba(37, 99, 235, 0.04);
