@@ -546,10 +546,35 @@ a {
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
+.footer-legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+}
+
 .footer-subfooter p {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.9rem;
+}
+
+.legal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.legal-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.legal-links a:hover {
+  color: var(--color-primary);
 }
 
 .insurance-badge {
