@@ -97,8 +97,8 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
-    min-width: 180px;
-    padding: 0.7rem 1.1rem;
+    min-width: 220px;
+    padding: 0.8rem 1.4rem;
     border: 1px solid rgba(37, 99, 235, 0.18);
     border-radius: 999px;
     background: rgba(37, 99, 235, 0.04);
