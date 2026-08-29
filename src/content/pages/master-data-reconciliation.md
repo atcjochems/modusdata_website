@@ -1,6 +1,7 @@
 ---
 title: Solving the Post-M&A Master Data Bottleneck
 description: Harmonizing SAP, Dynamics and Salesforce with modern entity resolution.
+publishedTime: '2026-08-26'
 ---
 
 <p class="post-kicker">Data engineering · Operational integration</p>

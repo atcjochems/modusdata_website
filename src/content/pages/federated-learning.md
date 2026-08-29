@@ -1,6 +1,7 @@
 ---
 title: "Breaking Data Silos in Pharma: How Federated Learning Unlocks Multi-Center RWE Without Violating Privacy"
 description: How federated learning unlocks multi-center real-world evidence without moving raw patient data.
+publishedTime: '2026-08-27'
 ---
 
 In life sciences, access to diverse, large-scale patient datasets is one of the strongest predictors of model reliability. Whether training survival prediction algorithms for oncology or leveraging Real-World Data (RWD) for drug discovery, machine learning models trained on single-center data often fail to generalize.

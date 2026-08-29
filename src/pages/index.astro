@@ -19,7 +19,10 @@ import Testimonials from '../components/widgets/Testimonials.astro';
 import FAQ from '../components/widgets/FAQ.astro';
 ---
 
-<BaseLayout title={`${data.title} | ${data.subtitle}`} description={data.hero}>
+<BaseLayout
+  title="Swiss AI & Data Science Consulting | Modus Data"
+  description={data.hero}
+>
   <section class="hero-panel demo">
     <h1>{data.title}</h1>
     <p>{data.hero}</p>
