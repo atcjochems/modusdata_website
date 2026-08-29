@@ -92,7 +92,7 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
     border-top: 1px solid rgba(15, 23, 42, 0.08);
   }
 
-  .social-link {
+  .social-links-container .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -111,14 +111,14 @@ When I'm not configuring GPU workloads or optimizing embedding pipelines, you'll
     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   }
 
-  .social-link:hover {
+  .social-links-container .social-link:hover {
     background: rgba(37, 99, 235, 0.08);
     border-color: rgba(37, 99, 235, 0.3);
     text-decoration: none;
     transform: translateY(-1px);
   }
 
-  .social-link svg {
+  .social-links-container .social-link svg {
     flex-shrink: 0;
   }
 
