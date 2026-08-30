@@ -6,8 +6,6 @@ title: Modus Data | Delivering Production-Grade AI Performance
 
 Advanced deep learning and large language models hold transformative potential—but only if they survive contact with real-world infrastructure. Modus Data bridges the gap between complex research notebooks and resilient, high-ROI enterprise software. 
 
-[Explore Our Services](#services) | [Schedule a Consultation](/contact/)
-
 ---
 
 ### Real-World Engineering, Not Theoretical AI.
