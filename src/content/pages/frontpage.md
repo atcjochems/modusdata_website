@@ -148,67 +148,54 @@ Modus Data designs, builds, and deploys custom AI systems built for mission-crit
 
 <div class="logo-carousel">
   <div class="logo-track">
-    <button type="button" class="logo-item" data-company="Bunge" data-challenge="High-volume ERP entity matching across legacy systems." data-solution="Hybrid deterministic plus LLM escalation pipeline using DuckDB and Polars for record reconciliation." data-outcome="90%+ reduction in manual record reconciliation time.">
+    <div class="logo-item">
       <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
-    </button>
-    <button type="button" class="logo-item" data-company="Daiichi Sankyo" data-challenge="Large-scale document compliance review across regulated medical workflows." data-solution="LLM validation layer with deterministic checks and quality controls integrated into the review process." data-outcome="Materially faster compliance review cycles with fewer missed anomalies.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
-    </button>
-    <button type="button" class="logo-item" data-company="Mercedes-Benz Mobility" data-challenge="Automated correspondence triage and classification across complex enterprise CRM data." data-solution="Custom NLP pipeline deployed with secure containerized services and operational monitoring." data-outcome="Faster routing, improved analyst throughput, and reduced manual triage effort." data-allow="true">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
-    </button>
-    <button type="button" class="logo-item" data-company="PwC Deutschland" data-challenge="Cross-functional analytics and data platform inconsistencies across consulting engagements." data-solution="Modernized data architecture and KPI orchestration with reusable business intelligence workflows." data-outcome="Cleaner decision support and faster executive reporting across delivery teams." data-allow="true">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/pwc_deutschland_logo.jfif" alt="PwC Deutschland" />
-    </button>
-    <button type="button" class="logo-item" data-company="Roche" data-challenge="High-stakes AI validation for regulated documentation and operational intelligence." data-solution="Domain-specific LLM guardrails and production-ready evaluation frameworks for enterprise adoption." data-outcome="Safer deployment and higher confidence in AI-assisted decision support." data-allow="true">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/roche_logo.jfif" alt="Roche" />
-    </button>
-    <button type="button" class="logo-item" data-company="T-Mobile Nederland" data-challenge="Time-sensitive fraud detection and anomaly recognition across large telecom event streams." data-solution="Custom predictive modeling and deployment architecture tuned for real-time operational risk." data-outcome="Reduced revenue leakage and stronger monitoring of suspicious activity patterns." data-allow="true">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
-    </button>
-    <button type="button" class="logo-item" data-company="Vlaamse Overheid" data-challenge="Public-sector data fragmentation and cross-domain reporting needs." data-solution="Secure data integration design paired with actionable analytics for policy and operations teams." data-outcome="Improved alignment between reporting systems and operational decision-making." data-allow="true">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
-    </button>
-    <button type="button" class="logo-item" data-company="Zorgdomein" data-challenge="Operational optimization across sensitive healthcare and administrative workflows." data-solution="Process-aware analytics and AI-enabled automation to reduce friction in data-heavy operations." data-outcome="Faster execution and better support for high-impact coordination tasks." data-allow="true">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
-    </button>
-    <button type="button" class="logo-item" data-company="Bunge" data-challenge="High-volume ERP entity matching across legacy systems." data-solution="Hybrid deterministic plus LLM escalation pipeline using DuckDB and Polars for record reconciliation." data-outcome="90%+ reduction in manual record reconciliation time.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
-    </button>
-    <button type="button" class="logo-item" data-company="Daiichi Sankyo" data-challenge="Large-scale document compliance review across regulated medical workflows." data-solution="LLM validation layer with deterministic checks and quality controls integrated into the review process." data-outcome="Materially faster compliance review cycles with fewer missed anomalies.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
-    </button>
-    <button type="button" class="logo-item" data-company="Mercedes-Benz Mobility" data-challenge="Automated correspondence triage and classification across complex enterprise CRM data." data-solution="Custom NLP pipeline deployed with secure containerized services and operational monitoring." data-outcome="Faster routing, improved analyst throughput, and reduced manual triage effort.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
-    </button>
-    <button type="button" class="logo-item" data-company="PwC Deutschland" data-challenge="Cross-functional analytics and data platform inconsistencies across consulting engagements." data-solution="Modernized data architecture and KPI orchestration with reusable business intelligence workflows." data-outcome="Cleaner decision support and faster executive reporting across delivery teams.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/pwc_deutschland_logo.jfif" alt="PwC Deutschland" />
-    </button>
-    <button type="button" class="logo-item" data-company="Roche" data-challenge="High-stakes AI validation for regulated documentation and operational intelligence." data-solution="Domain-specific LLM guardrails and production-ready evaluation frameworks for enterprise adoption." data-outcome="Safer deployment and higher confidence in AI-assisted decision support.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/roche_logo.jfif" alt="Roche" />
-    </button>
-    <button type="button" class="logo-item" data-company="T-Mobile Nederland" data-challenge="Time-sensitive fraud detection and anomaly recognition across large telecom event streams." data-solution="Custom predictive modeling and deployment architecture tuned for real-time operational risk." data-outcome="Reduced revenue leakage and stronger monitoring of suspicious activity patterns.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
-    </button>
-    <button type="button" class="logo-item" data-company="Vlaamse Overheid" data-challenge="Public-sector data fragmentation and cross-domain reporting needs." data-solution="Secure data integration design paired with actionable analytics for policy and operations teams." data-outcome="Improved alignment between reporting systems and operational decision-making.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
-    </button>
-    <button type="button" class="logo-item" data-company="Zorgdomein" data-challenge="Operational optimization across sensitive healthcare and administrative workflows." data-solution="Process-aware analytics and AI-enabled automation to reduce friction in data-heavy operations." data-outcome="Faster execution and better support for high-impact coordination tasks.">
+    </div>
+    <div class="logo-item">
       <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
-    </button>
-  </div>
-</div>
-
-<div class="case-study-modal" id="case-study-modal" aria-hidden="true">
-  <div class="case-study-modal__backdrop" data-close-modal="true"></div>
-  <div class="case-study-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="case-study-title">
-    <button type="button" class="case-study-modal__close" data-close-modal="true" aria-label="Close case study">×</button>
-    <h3 id="case-study-title" data-case-title>Mandate Snapshot</h3>
-    <ul class="case-study-list">
-      <li><strong>Challenge:</strong> <span data-case-challenge>Challenge text</span></li>
-      <li><strong>Solution:</strong> <span data-case-solution>Solution text</span></li>
-      <li><strong>Outcome:</strong> <span data-case-outcome>Outcome text</span></li>
-    </ul>
+    </div>
   </div>
 </div>
 

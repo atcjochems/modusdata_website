@@ -167,42 +167,6 @@ const links = [
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('case-study-modal');
-        if (modal) {
-          const title = modal.querySelector('[data-case-title]');
-          const challenge = modal.querySelector('[data-case-challenge]');
-          const solution = modal.querySelector('[data-case-solution]');
-          const outcome = modal.querySelector('[data-case-outcome]');
-
-          const closeModal = () => {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-          };
-
-          document.querySelectorAll('.logo-item').forEach((button) => {
-            button.addEventListener('click', () => {
-              title.textContent = button.dataset.company || 'Mandate Snapshot';
-              challenge.textContent = button.dataset.challenge || 'Challenge details';
-              solution.textContent = button.dataset.solution || 'Solution details';
-              outcome.textContent = button.dataset.outcome || 'Outcome details';
-              modal.classList.add('is-open');
-              modal.setAttribute('aria-hidden', 'false');
-            });
-          });
-
-          modal.addEventListener('click', (event) => {
-            if (event.target.matches('[data-close-modal]')) {
-              closeModal();
-            }
-          });
-
-          document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.classList.contains('is-open')) {
-              closeModal();
-            }
-          });
-        }
-
         document.querySelectorAll('[data-copy-email]').forEach((button) => {
           button.addEventListener('click', async () => {
             const email = button.getAttribute('data-copy-email');
