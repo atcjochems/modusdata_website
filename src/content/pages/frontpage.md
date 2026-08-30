@@ -85,6 +85,49 @@ Modus Data designs, builds, and deploys custom AI systems built for mission-crit
 
 ---
 
+## How We Work
+
+<div class="engagement-grid">
+  <article class="engagement-card">
+    <div class="engagement-header">
+      <span class="engagement-index">01</span>
+      <span class="engagement-pill">Format: Project Sprint</span>
+    </div>
+    <h3>Fixed-Scope Sprints</h3>
+    <p>Targeted execution for defined deliverables such as LLM/RAG PoC development, architectural audits, and master data resolution pipelines.</p>
+  </article>
+
+  <article class="engagement-card">
+    <div class="engagement-header">
+      <span class="engagement-index">02</span>
+      <span class="engagement-pill">Format: Ongoing Retainer</span>
+    </div>
+    <h3>Fractional AI Advisory</h3>
+    <p>Strategic leadership, MLOps governance, and code reviews on a recurring basis for scale-ups and enterprise teams needing senior guidance without a full-time hire.</p>
+  </article>
+
+  <article class="engagement-card">
+    <div class="engagement-header">
+      <span class="engagement-index">03</span>
+      <span class="engagement-pill">Format: Team Integration</span>
+    </div>
+    <h3>Senior Capacity</h3>
+    <p>Direct integration into existing delivery teams to lead high-stakes AI architecture or data engineering initiatives during critical project phases.</p>
+  </article>
+</div>
+
+<div class="engagement-callout" role="note" aria-label="Delivery scale reassurance">
+  <div class="engagement-callout__icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2.5 18.5 5v5.5c0 4.9-3.2 9.2-6.5 11.2-3.3-2-6.5-6.3-6.5-11.2V5L12 2.5Zm-1.2 9.7 1.2 1.2 3.1-3.1 1.3 1.3-4.4 4.4-2.6-2.6 1.2-1.2Z" fill="currentColor"/>
+      <path d="M8.7 8.5c.8-1.2 2.2-2 3.3-2 1.1 0 2.5.8 3.3 2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <p>Principal-led execution backed by a vetted network of specialist data engineers and MLOps consultants for large-scale enterprise deployments.</p>
+</div>
+
+---
+
 ## Proven Impact
 
 > **Automotive Enterprise Generative AI:** Architected and productized an end-to-end classification and automated correspondence summarization system, linking localized open-source LLMs hosted via container apps directly into corporate CRM ecosystems.
@@ -101,28 +144,79 @@ Modus Data designs, builds, and deploys custom AI systems built for mission-crit
 
 ## Trusted Partners
 
+<p class="logo-caption">Enterprise AI &amp; Data Architecture Experience</p>
+
 <div class="logo-carousel">
   <div class="logo-track">
-    <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
-    <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
-    <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
-    <img src="/img/logos/pwc_deutschland_logo.jfif" alt="PwC Deutschland" />
-    <img src="/img/logos/roche_logo.jfif" alt="Roche" />
-    <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
-    <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
-    <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
-    <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
-    <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
-    <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
-    <img src="/img/logos/pwc_deutschland_logo.jfif" alt="PwC Deutschland" />
-    <img src="/img/logos/roche_logo.jfif" alt="Roche" />
-    <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
-    <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
-    <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
+    <button type="button" class="logo-item" data-company="Bunge" data-challenge="High-volume ERP entity matching across legacy systems." data-solution="Hybrid deterministic plus LLM escalation pipeline using DuckDB and Polars for record reconciliation." data-outcome="90%+ reduction in manual record reconciliation time.">
+      <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
+    </button>
+    <button type="button" class="logo-item" data-company="Daiichi Sankyo" data-challenge="Large-scale document compliance review across regulated medical workflows." data-solution="LLM validation layer with deterministic checks and quality controls integrated into the review process." data-outcome="Materially faster compliance review cycles with fewer missed anomalies.">
+      <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
+    </button>
+    <button type="button" class="logo-item" data-company="Mercedes-Benz Mobility" data-challenge="Automated correspondence triage and classification across complex enterprise CRM data." data-solution="Custom NLP pipeline deployed with secure containerized services and operational monitoring." data-outcome="Faster routing, improved analyst throughput, and reduced manual triage effort." data-allow="true">
+      <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
+    </button>
+    <button type="button" class="logo-item" data-company="PwC Deutschland" data-challenge="Cross-functional analytics and data platform inconsistencies across consulting engagements." data-solution="Modernized data architecture and KPI orchestration with reusable business intelligence workflows." data-outcome="Cleaner decision support and faster executive reporting across delivery teams." data-allow="true">
+      <img src="/img/logos/pwc_deutschland_logo.jfif" alt="PwC Deutschland" />
+    </button>
+    <button type="button" class="logo-item" data-company="Roche" data-challenge="High-stakes AI validation for regulated documentation and operational intelligence." data-solution="Domain-specific LLM guardrails and production-ready evaluation frameworks for enterprise adoption." data-outcome="Safer deployment and higher confidence in AI-assisted decision support." data-allow="true">
+      <img src="/img/logos/roche_logo.jfif" alt="Roche" />
+    </button>
+    <button type="button" class="logo-item" data-company="T-Mobile Nederland" data-challenge="Time-sensitive fraud detection and anomaly recognition across large telecom event streams." data-solution="Custom predictive modeling and deployment architecture tuned for real-time operational risk." data-outcome="Reduced revenue leakage and stronger monitoring of suspicious activity patterns." data-allow="true">
+      <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
+    </button>
+    <button type="button" class="logo-item" data-company="Vlaamse Overheid" data-challenge="Public-sector data fragmentation and cross-domain reporting needs." data-solution="Secure data integration design paired with actionable analytics for policy and operations teams." data-outcome="Improved alignment between reporting systems and operational decision-making." data-allow="true">
+      <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
+    </button>
+    <button type="button" class="logo-item" data-company="Zorgdomein" data-challenge="Operational optimization across sensitive healthcare and administrative workflows." data-solution="Process-aware analytics and AI-enabled automation to reduce friction in data-heavy operations." data-outcome="Faster execution and better support for high-impact coordination tasks." data-allow="true">
+      <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
+    </button>
+    <button type="button" class="logo-item" data-company="Bunge" data-challenge="High-volume ERP entity matching across legacy systems." data-solution="Hybrid deterministic plus LLM escalation pipeline using DuckDB and Polars for record reconciliation." data-outcome="90%+ reduction in manual record reconciliation time.">
+      <img src="/img/logos/bunge_logo.jfif" alt="Bunge" />
+    </button>
+    <button type="button" class="logo-item" data-company="Daiichi Sankyo" data-challenge="Large-scale document compliance review across regulated medical workflows." data-solution="LLM validation layer with deterministic checks and quality controls integrated into the review process." data-outcome="Materially faster compliance review cycles with fewer missed anomalies.">
+      <img src="/img/logos/daiichi_sankyo_europe_gmbh_logo.jfif" alt="Daiichi Sankyo" />
+    </button>
+    <button type="button" class="logo-item" data-company="Mercedes-Benz Mobility" data-challenge="Automated correspondence triage and classification across complex enterprise CRM data." data-solution="Custom NLP pipeline deployed with secure containerized services and operational monitoring." data-outcome="Faster routing, improved analyst throughput, and reduced manual triage effort.">
+      <img src="/img/logos/mercedes_benz_mobility_logo.jfif" alt="Mercedes-Benz Mobility" />
+    </button>
+    <button type="button" class="logo-item" data-company="PwC Deutschland" data-challenge="Cross-functional analytics and data platform inconsistencies across consulting engagements." data-solution="Modernized data architecture and KPI orchestration with reusable business intelligence workflows." data-outcome="Cleaner decision support and faster executive reporting across delivery teams.">
+      <img src="/img/logos/pwc_deutschland_logo.jfif" alt="PwC Deutschland" />
+    </button>
+    <button type="button" class="logo-item" data-company="Roche" data-challenge="High-stakes AI validation for regulated documentation and operational intelligence." data-solution="Domain-specific LLM guardrails and production-ready evaluation frameworks for enterprise adoption." data-outcome="Safer deployment and higher confidence in AI-assisted decision support.">
+      <img src="/img/logos/roche_logo.jfif" alt="Roche" />
+    </button>
+    <button type="button" class="logo-item" data-company="T-Mobile Nederland" data-challenge="Time-sensitive fraud detection and anomaly recognition across large telecom event streams." data-solution="Custom predictive modeling and deployment architecture tuned for real-time operational risk." data-outcome="Reduced revenue leakage and stronger monitoring of suspicious activity patterns.">
+      <img src="/img/logos/t_mobile_nederland_logo.jfif" alt="T-Mobile Nederland" />
+    </button>
+    <button type="button" class="logo-item" data-company="Vlaamse Overheid" data-challenge="Public-sector data fragmentation and cross-domain reporting needs." data-solution="Secure data integration design paired with actionable analytics for policy and operations teams." data-outcome="Improved alignment between reporting systems and operational decision-making.">
+      <img src="/img/logos/vlaamse_overheid_logo.jfif" alt="Vlaamse Overheid" />
+    </button>
+    <button type="button" class="logo-item" data-company="Zorgdomein" data-challenge="Operational optimization across sensitive healthcare and administrative workflows." data-solution="Process-aware analytics and AI-enabled automation to reduce friction in data-heavy operations." data-outcome="Faster execution and better support for high-impact coordination tasks.">
+      <img src="/img/logos/zorgdomein_logo.jfif" alt="Zorgdomein" />
+    </button>
   </div>
 </div>
 
-### Ready to build?
-Your journey toward production-grade AI starts with a technical conversation. 
+<div class="case-study-modal" id="case-study-modal" aria-hidden="true">
+  <div class="case-study-modal__backdrop" data-close-modal="true"></div>
+  <div class="case-study-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="case-study-title">
+    <button type="button" class="case-study-modal__close" data-close-modal="true" aria-label="Close case study">×</button>
+    <h3 id="case-study-title" data-case-title>Mandate Snapshot</h3>
+    <ul class="case-study-list">
+      <li><strong>Challenge:</strong> <span data-case-challenge>Challenge text</span></li>
+      <li><strong>Solution:</strong> <span data-case-solution>Solution text</span></li>
+      <li><strong>Outcome:</strong> <span data-case-outcome>Outcome text</span></li>
+    </ul>
+  </div>
+</div>
 
-[Book a Free Consultation](mailto:arthur@modusdata.ch)
+---
+
+### Ready to build?
+Your journey toward production-grade AI starts with a technical conversation. A direct principal-led engagement keeps the design quality high while avoiding bloated consulting layers or junior staffing overhead.
+
+<div class="hero-actions" style="margin-top: 1.25rem;">
+  <a class="btn btn-primary" href="/contact/">Book a consultation</a>
+</div>

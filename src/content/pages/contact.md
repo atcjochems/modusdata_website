@@ -29,8 +29,8 @@ Switzerland
 ### What to Expect
 
 - **Initial Response**: Within 1 business day
-- **Free Consultation**: 30-minute technical discovery call
-- **Next Steps**: Clear proposal with scope, timeline, and investment
+- **Discovery Process**: Clear scoping and technical fit assessment
+- **Next Steps**: Proposal with scope, timeline, and execution plan
 
 I work with clients who value deep technical expertise, transparency, and production-grade delivery.
 
@@ -38,9 +38,34 @@ Looking forward to connecting.
 
 ---
 
-**Preferred Contact Method**  
-Email tends to work best for initial outreach, especially when including a short description of your project or challenge.
+<div class="lead-panel lead-panel--form">
+  <h3>Share your project</h3>
+  <p>Tell us what you are solving, where delivery pressure sits, and the timeline you are working within.</p>
+  <form class="contact-form" action="https://formspree.io/f/mgvojvll" method="POST">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" placeholder="Your name" required />
+    </label>
+    <label>
+      <span>Work Email</span>
+      <input type="email" name="email" placeholder="name@company.com" required />
+    </label>
+    <label>
+      <span>Project Overview</span>
+      <textarea name="project" rows="4" placeholder="Tell us about the challenge, data context, and expected outcome." required></textarea>
+    </label>
+    <label>
+      <span>Target Timeline</span>
+      <input type="text" name="timeline" placeholder="e.g. 6–8 weeks, Q4 2026" />
+    </label>
+    <button type="submit" class="btn btn-primary">Send inquiry</button>
+  </form>
 
-<div class="contact-card">
-  <a href="mailto:arthur@modusdata.ch" class="cta-button">Send Email</a>
+  <div class="email-copy-block">
+    <span class="email-copy-label">Email</span>
+    <div class="email-copy-row">
+      <a href="mailto:arthur@modusdata.ch">arthur@modusdata.ch</a>
+      <button type="button" class="copy-email-btn" data-copy-email="arthur@modusdata.ch">Copy email</button>
+    </div>
+  </div>
 </div>
