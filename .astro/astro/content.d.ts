@@ -176,6 +176,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"multi-modal-omics-radiomics-pipelines.md": {
+	id: "multi-modal-omics-radiomics-pipelines.md";
+  slug: "multi-modal-omics-radiomics-pipelines";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "services.md": {
 	id: "services.md";
   slug: "services";
