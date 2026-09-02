@@ -157,9 +157,10 @@ a {
 }
 
 .hero-panel p {
-  max-width: 760px;
+  max-width: none;
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.04rem;
+  line-height: 1.75;
   color: var(--color-muted);
 }
 
@@ -1005,7 +1006,7 @@ a {
   }
 
   .hero-panel p {
-    font-size: 0.98rem;
+    font-size: 1.04rem;
   }
 
   .hero-actions .btn {
