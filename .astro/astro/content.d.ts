@@ -155,6 +155,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"enterprise-fraud-detection.md": {
+	id: "enterprise-fraud-detection.md";
+  slug: "enterprise-fraud-detection";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "federated-learning.md": {
 	id: "federated-learning.md";
   slug: "federated-learning";

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'enterprise-fraud-detection');
+if (!postEntry) throw new Error('Could not find enterprise-fraud-detection markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Enterprise Fraud Detection: From Real-Time Machine Learning to Measurable Bottom-Line ROI | ${data.title}`}
+  description="How Modus Data integrates real-time machine learning, graph analytics and financial utility metrics into enterprise fraud decisioning."
+  image="/img/assets/post_fraud_detection/fraud-detection-hero.png"
+  type="article"
+  publishedTime={postEntry.data.publishedTime}
+  author="Arthur Jochems"
+  tags={['Fraud detection', 'Machine learning', 'Risk architecture', 'Real-time inference', 'MLOps']}
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>
