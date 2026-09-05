@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071d31"/>
+      <stop offset="1" stop-color="#123d4d"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f4e9"/>
+      <stop offset="1" stop-color="#d7e7df"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <path d="M0 540c180-80 280-5 430-65s250-14 375-90 230-90 395-38v283H0Z" fill="#0a2c42"/>
+  <g fill="none" stroke="#51d3c2" stroke-width="2" opacity=".35">
+    <path d="M640 120h480M625 175h520M610 230h550M595 285h575M580 340h600"/>
+  </g>
+  <g transform="translate(690 93) rotate(7)">
+    <rect width="245" height="320" rx="10" fill="url(#paper)"/>
+    <path d="M176 0v70h69" fill="#b6d3c9"/>
+    <path d="M176 0v70h69" fill="none" stroke="#729c92" stroke-width="2"/>
+    <text x="24" y="48" fill="#123d4d" font-family="Arial, sans-serif" font-size="17" font-weight="700">CLAIM DOSSIER</text>
+    <path d="M24 92h150M24 113h185M24 134h168M24 181h188M24 202h150M24 223h175" stroke="#729c92" stroke-width="7" stroke-linecap="round" opacity=".6"/>
+    <circle cx="43" cy="270" r="17" fill="#51d3c2"/><path d="m34 270 7 7 13-16" fill="none" stroke="#073047" stroke-width="5"/>
+    <text x="73" y="278" fill="#123d4d" font-family="Arial, sans-serif" font-size="16" font-weight="700">VERIFIED</text>
+  </g>
+  <g fill="none" stroke="#f5c86a" stroke-width="4">
+    <path d="M530 240h116M530 240l-44 64M646 240l60 82M486 304h-72M706 322h82"/>
+  </g>
+  <g fill="#f06f61" stroke="#f7d482" stroke-width="4">
+    <circle cx="530" cy="240" r="13"/><circle cx="486" cy="304" r="13"/><circle cx="646" cy="240" r="13"/><circle cx="706" cy="322" r="13"/><circle cx="414" cy="304" r="13"/><circle cx="788" cy="322" r="13"/>
+  </g>
+  <rect x="76" y="76" width="440" height="8" rx="4" fill="#51d3c2"/>
+  <text x="76" y="145" fill="#f7d482" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3">MODUS DATA / INSURANCE AI</text>
+  <text x="76" y="235" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Agentic AI in</text>
+  <text x="76" y="300" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Insurance</text>
+  <text x="80" y="360" fill="#b8d4d7" font-family="Arial, sans-serif" font-size="23">Automated claims processing</text>
+  <text x="80" y="395" fill="#b8d4d7" font-family="Arial, sans-serif" font-size="23">with enterprise compliance</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#082238">
+    <rect x="80" y="500" width="145" height="40" rx="20" fill="#51d3c2"/><text x="107" y="526">LANGGRAPH</text>
+    <rect x="240" y="500" width="105" height="40" rx="20" fill="#f7d482"/><text x="264" y="526">RAG</text>
+    <rect x="360" y="500" width="150" height="40" rx="20" fill="#f06f61"/><text x="384" y="526">HUMAN HITL</text>
+  </g>
+</svg>

@@ -148,6 +148,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"agentic-ai-insurance.md": {
+	id: "agentic-ai-insurance.md";
+  slug: "agentic-ai-insurance";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "contact.md": {
 	id: "contact.md";
   slug: "contact";

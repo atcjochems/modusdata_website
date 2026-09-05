@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'agentic-ai-insurance');
+if (!postEntry) throw new Error('Could not find agentic-ai-insurance markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Agentic AI in Insurance: Automated Claims Processing with LangGraph and Enterprise Compliance | ${data.title}`}
+  description="How Modus Data builds auditable, human-supervised agentic AI claims workflows with LangGraph, LangChain and LangSmith."
+  image="/img/assets/post_agentic_insurance/agentic-insurance-hero.png"
+  type="article"
+  publishedTime={postEntry.data.publishedTime}
+  author="Arthur Jochems"
+  tags={['Agentic AI', 'Insurance technology', 'Claims automation', 'LangGraph', 'Enterprise compliance']}
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>
