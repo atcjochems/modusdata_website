@@ -30,7 +30,7 @@ const organizationSchema = {
   url: siteUrl.href,
   logo: new URL('/img/MD_logo.png', siteUrl).href,
   description,
-  email: 'mailto:arthur@modusdata.ch',
+  email: 'arthur@modusdata.ch',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Benkenstrasse 3',
@@ -202,13 +202,14 @@ const links = [
         };
 
         const setConsent = (value) => {
+          const previousValue = localStorage.getItem(consentKey);
           localStorage.setItem(consentKey, value);
           banner.hidden = true;
           if (value === 'accepted') loadLinkedInInsightTag();
+          if (previousValue === 'accepted' && value === 'declined') window.location.reload();
         };
 
         const openConsentSettings = () => {
-          localStorage.removeItem(consentKey);
           banner.hidden = false;
         };
 
