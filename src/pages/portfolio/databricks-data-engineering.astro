@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'databricks-data-engineering');
+if (!postEntry) throw new Error('Could not find databricks-data-engineering markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Optimizing Enterprise Workloads on Databricks | ${data.title}`}
+  description="How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation."
+  image="/img/assets/post_databricks/databricks-data-engineering-hero.png"
+  type="article"
+  publishedTime={postEntry.data.publishedTime}
+  author="Arthur Jochems"
+  tags={['Data engineering', 'Databricks', 'Azure Data Factory', 'Delta Lake', 'Power BI']}
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Optimizing Enterprise Workloads on Databricks | Modus Data</title><meta name="description" content="How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation."><meta name="robots" content="index, follow"><link rel="canonical" href="https://modusdata.ch/portfolio/databricks-data-engineering/"><meta property="og:title" content="Optimizing Enterprise Workloads on Databricks | Modus Data"><meta property="og:description" content="How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation."><meta property="og:image" content="https://modusdata.ch/img/assets/post_databricks/databricks-data-engineering-hero.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://modusdata.ch/portfolio/databricks-data-engineering/"><meta property="og:type" content="article"><meta property="og:site_name" content="Modus Data"><meta property="article:published_time" content="2026-09-05"><meta property="article:author" content="Arthur Jochems"><meta property="article:tag" content="Data engineering"><meta property="article:tag" content="Databricks"><meta property="article:tag" content="Azure Data Factory"><meta property="article:tag" content="Delta Lake"><meta property="article:tag" content="Power BI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Optimizing Enterprise Workloads on Databricks | Modus Data"><meta name="twitter:description" content="How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation."><meta name="twitter:image" content="https://modusdata.ch/img/assets/post_databricks/databricks-data-engineering-hero.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Modus Data GmbH","url":"https://modusdata.ch/","logo":"https://modusdata.ch/img/MD_logo.png","description":"How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation.","email":"mailto:arthur@modusdata.ch","address":{"@type":"PostalAddress","streetAddress":"Benkenstrasse 3","postalCode":"4106","addressLocality":"Therwil","addressCountry":"CH"},"sameAs":["https://www.linkedin.com/company/modus-data-gmbh/"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Optimizing Enterprise Workloads on Databricks | Modus Data","description":"How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation.","url":"https://modusdata.ch/portfolio/databricks-data-engineering/","image":"https://modusdata.ch/img/assets/post_databricks/databricks-data-engineering-hero.png","author":{"@type":"Person","name":"Arthur Jochems"},"publisher":{"@context":"https://schema.org","@type":"Organization","name":"Modus Data GmbH","url":"https://modusdata.ch/","logo":"https://modusdata.ch/img/MD_logo.png","description":"How Modus Data engineers governed Azure and Databricks workloads that turn heterogeneous sources into a trusted Power BI data foundation.","email":"mailto:arthur@modusdata.ch","address":{"@type":"PostalAddress","streetAddress":"Benkenstrasse 3","postalCode":"4106","addressLocality":"Therwil","addressCountry":"CH"},"sameAs":["https://www.linkedin.com/company/modus-data-gmbh/"]},"datePublished":"2026-09-05","keywords":"Data engineering, Databricks, Azure Data Factory, Delta Lake, Power BI"}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/about.CPvqAagP.css"></head> <body> <div class="site-shell"> <header class="site-header"> <a class="brand" href="/"> <img class="brand-logo" src="/img/MD_logo.png" alt="Modus Data logo"> <span class="brand-copy"> <strong>Modus Data</strong> <small>Production-grade AI</small> </span> </a> <nav class="site-nav" aria-label="Primary navigation"> <a href="/">Home</a><a href="/services/">Services</a><a href="/portfolio/">Portfolio</a><a href="/about/">About</a><a href="/contact/">Contact</a> </nav> </header> <main class="site-main">  <article class="markdown-content portfolio-article"> <a class="back-link" href="/portfolio/">← Back to portfolio</a> <h1>Optimizing Enterprise Workloads on Databricks</h1> <p>Enterprise reporting becomes difficult long before the dashboard is built. Data arrives from on-premise databases, APIs, SaaS platforms, blobs, documents, and streaming systems, each with different schemas, refresh cycles, and quality issues. Without a disciplined architecture, teams end up reconciling competing numbers instead of making decisions.</p>
+<p>At <strong>Modus Data</strong>, we design production-grade data engineering platforms that orchestrate ingestion with Azure Data Factory, transform data on Databricks, govern sensitive information, and deliver a trusted source of truth through Power BI.</p>
+<p><img src="/img/assets/post_databricks/databricks-data-engineering-hero.png" alt="Enterprise data engineering flow from Azure Data Factory through Databricks to Power BI"></p>
+<h2 id="the-architecture-at-a-glance">The architecture at a glance</h2>
+<p>The platform connects heterogeneous inputs to governed, business-ready reporting through four complementary layers:</p>
+<ul>
+<li><strong>Ingest and orchestrate:</strong> Azure Data Factory coordinates data from on-premise SQL systems, APIs, blobs, SaaS applications, and streaming sources into Azure Data Lake Gen2.</li>
+<li><strong>Transform and optimize:</strong> Databricks applies distributed processing and Delta Lake to create reliable bronze, silver, and gold data products.</li>
+<li><strong>Protect and understand:</strong> Anonymization, access controls, lineage, and auditability are applied as data moves through the platform.</li>
+<li><strong>Serve and decide:</strong> Curated gold tables feed a centralized semantic model through Databricks SQL and Power BI.</li>
+</ul>
+<h2 id="1-ingest-and-orchestrate-with-azure-data-factory">1. Ingest and orchestrate with Azure Data Factory</h2>
+<p>Azure Data Factory provides the control plane for ingestion from multiple heterogeneous sources. The landing zone in Azure Data Lake Gen2 preserves source data while pipelines manage the movement into the processing platform.</p>
+<ul>
+<li><strong>Incremental and full loads:</strong> Choose the appropriate loading strategy for each source and avoid unnecessary processing.</li>
+<li><strong>Change data capture:</strong> Propagate source changes efficiently while preserving a reliable history.</li>
+<li><strong>Monitoring and alerting:</strong> Detect failed, delayed, or incomplete loads before they affect downstream reporting.</li>
+<li><strong>Event-driven processing:</strong> Trigger workflows when new files or source events arrive instead of relying only on fixed schedules.</li>
+</ul>
+<p>This separation between orchestration and transformation keeps pipelines observable and makes the platform easier to extend as new sources are added.</p>
+<h2 id="2-build-a-medallion-architecture-on-databricks">2. Build a medallion architecture on Databricks</h2>
+<p>Databricks transforms raw data through the medallion schema, creating clear quality boundaries between ingestion and consumption:</p>
+<ul>
+<li><strong>Bronze:</strong> Raw, immutable records retained with source context for traceability and replay.</li>
+<li><strong>Silver:</strong> Cleaned, validated, deduplicated, and conformed data with consistent business keys.</li>
+<li><strong>Gold:</strong> Aggregated, business-ready datasets optimized for analytics and reporting.</li>
+</ul>
+<p>Delta Lake provides transactional reliability, while tools such as Auto Loader and workload-aware optimization help the platform handle large and continuously arriving datasets. Partitioning, clustering, and Z-ordering can then be applied where they improve the actual query patterns rather than as blanket defaults.</p>
+<h2 id="3-combine-structured-and-unstructured-data-with-ocr">3. Combine structured and unstructured data with OCR</h2>
+<p>Important business information often lives outside relational tables. Scanned forms, PDFs, TIFFs, and image-based records can be processed alongside structured data using Azure AI Document Intelligence and distributed Databricks workloads.</p>
+<p>A practical document pipeline includes:</p>
+<ul>
+<li>Image preprocessing and quality checks with Spark.</li>
+<li>OCR and entity extraction from scanned documents.</li>
+<li>Normalization of extracted values into a shared business model.</li>
+<li>Validation against structured records before publication to silver or gold layers.</li>
+</ul>
+<p>This makes documents part of the same governed data flow instead of creating a separate, manually maintained reporting process.</p>
+<h2 id="4-anonymization-and-governance-by-design">4. Anonymization and governance by design</h2>
+<p>Sensitive data should be protected in the architecture, not cleaned up immediately before a report is published. Masking, pseudonymization, and other privacy techniques can be applied at the silver and gold layers according to the use case and risk profile.</p>
+<p>Governance capabilities include:</p>
+<ul>
+<li>Dynamic data masking and controlled access to sensitive columns.</li>
+<li>Row-level filters for organizational or regional boundaries.</li>
+<li>Unity Catalog and Azure Purview for ownership, lineage, and discovery.</li>
+<li>Audit logs and access controls aligned with GDPR and internal policies.</li>
+</ul>
+<p>The objective is not merely to restrict access. It is to make the permitted use of data understandable, reproducible, and auditable.</p>
+<h2 id="5-deliver-a-single-source-of-truth-through-power-bi">5. Deliver a single source of truth through Power BI</h2>
+<p>Gold tables feed a centralized semantic model in Databricks SQL, exposed through Power BI using direct query or import mode as appropriate for the workload. Teams can then work from unified KPIs with drill-through, row-level security, and consistent definitions.</p>
+<p>The resulting reporting layer supports:</p>
+<ul>
+<li>Databricks SQL endpoints for governed analytical access.</li>
+<li>Incremental refresh for efficient report updates.</li>
+<li>Row-level security and single sign-on for controlled distribution.</li>
+<li>Shared business definitions that prevent each dashboard from becoming its own data product.</li>
+</ul>
+<h2 id="production-grade-by-design">Production-grade by design</h2>
+<p>The strongest data platforms make the path from source to decision visible. They preserve raw context, enforce quality gates, protect sensitive information, and give business teams a consistent analytical language.</p>
+<p>At <strong>Modus Data</strong>, we help organizations optimize Databricks workloads for cost, performance, governance, and maintainability, from the first ingestion pipeline through the final Power BI model.</p>
+<p><a href="https://modusdata.ch/contact">Contact Modus Data to discuss your data architecture</a>.</p> </article>  </main> <footer class="site-footer"> <div class="footer-content"> <div class="footer-brand"> <strong>Modus Data GmbH</strong> <p>Pragmatic AI, data engineering and production systems for regulated organizations.</p> <div class="footer-meta" aria-label="Business information"> <span>Therwil / Basel, Switzerland</span> <span>CHE-218.406.940</span> </div> </div> <div class="footer-side"> <div class="footer-socials" aria-label="Social and contact links"> <a class="social-link" href="https://www.linkedin.com/company/modus-data-gmbh/" target="_blank" rel="noreferrer" aria-label="LinkedIn"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path fill="currentColor" d="M6.94 8.49a1.58 1.58 0 1 1 0-3.16 1.58 1.58 0 0 1 0 3.16ZM5.5 9.94h2.9v8.08H5.5V9.94Zm4.72 0h2.79v1.11h.04c.39-.74 1.35-1.52 2.77-1.52 2.96 0 3.5 1.95 3.5 4.47v4.02h-2.9v-3.76c0-1.42-.03-3.25-1.98-3.25-1.99 0-2.29 1.55-2.29 3.15v3.86h-2.93V9.94Z"></path> </svg> </a> <a href="mailto:arthur@modusdata.ch">arthur@modusdata.ch</a> </div> <div class="footer-links"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/contact/">Contact</a> </div> </div> </div> <div class="footer-subfooter"> <div class="footer-legal"> <p>© 2026 Modus Data GmbH. All rights reserved.</p> <div class="legal-links" aria-label="Legal links"> <a href="/impressum/">Impressum</a> <a href="/privacy-policy/">Privacy Policy</a> </div> </div> <div class="insurance-badge" aria-label="Exali Haftpflichtversicherung"> <div class="insurance-wordmark">exali</div> <div class="insurance-mark" aria-hidden="true"> <span class="insurance-check"></span> </div> <div class="insurance-tag">HAFTPFLICHT<br>SICHER</div> </div> </div> </footer> </div> <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-copy-email]').forEach((button) => {
+          button.addEventListener('click', async () => {
+            const email = button.getAttribute('data-copy-email');
+            const label = button.textContent;
+
+            try {
+              await navigator.clipboard.writeText(email);
+              button.textContent = 'Email copied';
+              setTimeout(() => {
+                button.textContent = label;
+              }, 1800);
+            } catch (error) {
+              const fallback = document.createElement('a');
+              fallback.href = `mailto:${email}`;
+              fallback.textContent = 'Open email app';
+              button.replaceWith(fallback);
+            }
+          });
+        });
+      });
+    </script> </body> </html>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071d31"/><stop offset="1" stop-color="#204b70"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7c85c"/><stop offset="1" stop-color="#f28b49"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#b8def6" fill="none">
+    <path d="M0 80h1200M0 140h1200M0 200h1200M0 260h1200M0 320h1200M0 380h1200M0 440h1200M0 500h1200"/>
+    <path d="M80 0v630M180 0v630M280 0v630M380 0v630M480 0v630M580 0v630M680 0v630M780 0v630M880 0v630M980 0v630M1080 0v630"/>
+  </g>
+  <path d="M0 550c175-75 290 35 450-30s245-35 380-105 250-52 370-7v222H0Z" fill="#0b2b48"/>
+  <g fill="none" stroke="#7bd5e7" stroke-width="4">
+    <path d="M620 195h120M790 195h115M975 195h75M700 315h160M920 315h130M785 435h140"/>
+  </g>
+  <g fill="#f7c85c" stroke="#fff0a4" stroke-width="3">
+    <circle cx="620" cy="195" r="12"/><circle cx="740" cy="195" r="12"/><circle cx="790" cy="195" r="12"/><circle cx="905" cy="195" r="12"/><circle cx="975" cy="195" r="12"/><circle cx="1050" cy="195" r="12"/>
+    <circle cx="700" cy="315" r="12"/><circle cx="860" cy="315" r="12"/><circle cx="920" cy="315" r="12"/><circle cx="1050" cy="315" r="12"/><circle cx="785" cy="435" r="12"/><circle cx="925" cy="435" r="12"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="700" font-size="17" text-anchor="middle">
+    <rect x="625" y="238" width="130" height="58" rx="12" fill="#1a5b82" stroke="#74d3e4"/><text x="690" y="273" fill="#ffffff">BRONZE</text>
+    <rect x="785" y="238" width="130" height="58" rx="12" fill="#267394" stroke="#74d3e4"/><text x="850" y="273" fill="#ffffff">SILVER</text>
+    <rect x="945" y="238" width="130" height="58" rx="12" fill="#2e8b88" stroke="#74d3e4"/><text x="1010" y="273" fill="#ffffff">GOLD</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="700" font-size="15" text-anchor="middle">
+    <rect x="560" y="350" width="140" height="48" rx="24" fill="#f7c85c"/><text x="630" y="380" fill="#09243b">ADF INGEST</text>
+    <rect x="760" y="350" width="140" height="48" rx="24" fill="#f7c85c"/><text x="830" y="380" fill="#09243b">DATABRICKS</text>
+    <rect x="960" y="350" width="140" height="48" rx="24" fill="#f7c85c"/><text x="1030" y="380" fill="#09243b">POWER BI</text>
+  </g>
+  <rect x="76" y="76" width="420" height="8" rx="4" fill="#7bd5e7"/>
+  <text x="76" y="145" fill="#f7d87a" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3">MODUS DATA / DATA ENGINEERING</text>
+  <text x="76" y="235" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="700">Optimizing workloads</text>
+  <text x="76" y="298" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="700">on Databricks</text>
+  <text x="80" y="362" fill="#c6e1f1" font-family="Arial, sans-serif" font-size="23">From heterogeneous sources</text>
+  <text x="80" y="397" fill="#c6e1f1" font-family="Arial, sans-serif" font-size="23">to a trusted source of truth</text>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+    <rect x="80" y="500" width="130" height="40" rx="20" fill="#55b8d3"/><text x="145" y="526" fill="#082238">AZURE</text>
+    <rect x="225" y="500" width="145" height="40" rx="20" fill="#f7c85c"/><text x="297" y="526" fill="#082238">MEDALLION</text>
+    <rect x="385" y="500" width="125" height="40" rx="20" fill="#7bd5a3"/><text x="447" y="526" fill="#082238">GOVERNED</text>
+  </g>
+</svg>

@@ -162,6 +162,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"databricks-data-engineering.md": {
+	id: "databricks-data-engineering.md";
+  slug: "databricks-data-engineering";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "enterprise-fraud-detection.md": {
 	id: "enterprise-fraud-detection.md";
   slug: "enterprise-fraud-detection";
