@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'predictive-sales-intelligence');
+if (!postEntry) throw new Error('Could not find predictive-sales-intelligence markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Predictive Sales Intelligence and Churn Mitigation | ${data.title}`}
+  description="How Modus Data connects external market signals with internal account data to identify growth opportunities and reduce preventable churn."
+  image="/img/assets/post_sales_intelligence/sales-intelligence-hero.jpg"
+  type="article"
+  publishedTime={postEntry.data.publishedTime}
+  author="Arthur Jochems"
+  tags={['Sales intelligence', 'Churn prevention', 'Machine learning', 'Data engineering', 'CRM integration']}
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

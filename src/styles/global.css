@@ -382,6 +382,10 @@ a {
   object-fit: cover;
 }
 
+.portfolio-card-image-sales-intelligence img {
+  aspect-ratio: 1024 / 572;
+}
+
 .portfolio-card-body {
   padding: clamp(1.25rem, 3vw, 2rem);
 }

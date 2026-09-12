@@ -204,6 +204,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"predictive-sales-intelligence.md": {
+	id: "predictive-sales-intelligence.md";
+  slug: "predictive-sales-intelligence";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "services.md": {
 	id: "services.md";
   slug: "services";
