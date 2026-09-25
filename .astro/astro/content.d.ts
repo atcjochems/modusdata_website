@@ -211,6 +211,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"sap-ai-ticket-categorization.md": {
+	id: "sap-ai-ticket-categorization.md";
+  slug: "sap-ai-ticket-categorization";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "services.md": {
 	id: "services.md";
   slug: "services";

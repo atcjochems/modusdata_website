@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'sap-ai-ticket-categorization');
+if (!postEntry) throw new Error('Could not find sap-ai-ticket-categorization markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`A hybrid BTP/Azure architecture for agentic AI integration into SAP | ${data.title}`}
+  description="How Modus Data combines SAP BTP Clean Core principles with Azure Container Apps and LangGraph to classify enterprise support tickets."
+  image="/img/assets/post_sap_ai_ticketing/hero%20sap%20azure.jpeg"
+  type="article"
+  publishedTime={postEntry.data.publishedTime}
+  author="Arthur Jochems"
+  tags={['SAP BTP', 'Azure Container Apps', 'LangGraph', 'Enterprise AI', 'Clean Core']}
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

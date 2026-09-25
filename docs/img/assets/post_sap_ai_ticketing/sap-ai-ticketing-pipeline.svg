@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
+  <title id="title">Sequential three-stage LangGraph SAP support ticket pipeline</title>
+  <desc id="desc">SAP S/4HANA sends tickets through BTP Event Mesh into one Azure Container App. Inside it, LangGraph runs rules, vector preselection, then LLM classification with Instructor structured output, with the result returned to BTP.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1"><stop stop-color="#091d31"/><stop offset="1" stop-color="#123847"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 9 3 0 6Z" fill="#63e6c5"/></marker>
+    <marker id="return-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 9 3 0 6Z" fill="#f4c95d"/></marker>
+  </defs>
+  <rect width="1200" height="470" rx="22" fill="#061320"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="38" fill="#d7f8f0" font-size="22" font-weight="700">Sequential LangGraph pipeline in one Azure Container App</text>
+    <g fill="url(#panel)" stroke="#4e9bc1" stroke-width="2"><rect x="35" y="175" width="165" height="105" rx="12"/><rect x="245" y="175" width="165" height="105" rx="12"/></g>
+    <rect x="435" y="82" width="490" height="225" rx="18" fill="#0a2635" stroke="#22d3a6" stroke-width="3"/>
+    <text x="680" y="108" fill="#73f3d3" font-size="16" font-weight="700">AZURE CONTAINER APPS (ACA)</text>
+    <text x="680" y="128" fill="#8ab3c5" font-size="13">One LangGraph service</text>
+    <g fill="#073a43" stroke="#63e6c5" stroke-width="2"><rect x="455" y="155" width="140" height="105" rx="12"/><rect x="610" y="155" width="140" height="105" rx="12"/><rect x="765" y="155" width="140" height="105" rx="12"/></g>
+    <rect x="955" y="175" width="210" height="105" rx="12" fill="url(#panel)" stroke="#4e9bc1" stroke-width="2"/>
+    <g fill="#d9f4ff"><text x="117" y="212" font-size="17" font-weight="700">SAP S/4HANA</text><text x="117" y="237" font-size="14">Ticket created</text><text x="327" y="212" font-size="17" font-weight="700">BTP Event Mesh</text><text x="327" y="237" font-size="14">CAP adapter + queue</text><text x="525" y="190" font-size="16" font-weight="700">Stage 1</text><text x="525" y="215" font-size="14">Rules first</text><text x="525" y="238" font-size="12">Resolve or pass on</text><text x="680" y="190" font-size="16" font-weight="700">Stage 2</text><text x="680" y="215" font-size="14">Vector match</text><text x="680" y="238" font-size="12">Preselect candidates</text><text x="835" y="190" font-size="16" font-weight="700">Stage 3</text><text x="835" y="215" font-size="14">LLM + Instructor</text><text x="835" y="238" font-size="12">Structured output</text><text x="1060" y="212" font-size="17" font-weight="700">Result</text><text x="1060" y="237" font-size="14">Category + evidence</text></g>
+    <g fill="none" stroke="#63e6c5" stroke-width="3" marker-end="url(#arrow)"><path d="M200 227H245"/><path d="M410 227H455"/><path d="M595 207H610"/><path d="M750 207H765"/><path d="M905 207H955"/></g>
+    <path d="M1060 280 C1060 365 395 400 327 280" fill="none" stroke="#f4c95d" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#return-arrow)"/>
+    <text x="680" y="380" fill="#f4c95d" font-size="14">Structured classification returned to BTP Event Mesh</text>
+    <text x="680" y="425" fill="#8ab3c5" font-size="15">Rules first → vector preselection → LLM classification → Instructor schema</text>
+  </g>
+</svg>
