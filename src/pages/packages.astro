@@ -1,0 +1,471 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const packages = [
+  {
+    id: 'prototype',
+    badge: 'Validation Stage',
+    title: 'AI & Data Prototype Package',
+    price: 'CHF 15,000',
+    timeline: '2–3 Weeks',
+    target: 'Validate technical feasibility, model accuracy, and business ROI before full deployment.',
+    deliverables: [
+      'Architecture & Data Assessment (APIs, schemas, data quality evaluation)',
+      'Core Algorithmic Workflow (Targeted LLM/RAG agent or ML model prototype)',
+      'Interactive UI Demo (Streamlit / Gradio functional prototype for stakeholders)',
+      'Evaluation & Scaling Report (Accuracy metrics, latency, and cloud cost projections)',
+    ],
+    cta: 'Book Prototype Scoping Call',
+  },
+  {
+    id: 'production',
+    badge: 'Production Ready',
+    title: 'Enterprise Production Implementation',
+    price: 'CHF 30,000',
+    timeline: '3–5 Weeks',
+    target: 'Build and deploy a secure, enterprise-grade AI solution into your infrastructure.',
+    deliverables: [
+      'Scalable Backend Architecture (Production APIs via FastAPI / Cloud Services)',
+      'MLOps & Observability (Evaluation harness, logging, telemetry via LangWatch/LangChain/Custom)',
+      'Enterprise Integrations (Vector DBs, Databricks/Spark pipelines, IAM/RBAC setup)',
+      'CI/CD & Containerization (Dockerized setup, IaC scripts, and repo structuring)',
+    ],
+    cta: 'Schedule Implementation Call',
+    featured: true,
+  },
+  {
+    id: 'handoff',
+    badge: 'Operational Excellence',
+    title: 'Knowledge Transfer & Handoff',
+    price: 'CHF 5,000',
+    timeline: '1–2 Weeks Standby',
+    target: 'Enable your internal engineering team to own, run, and scale the application long-term.',
+    deliverables: [
+      'Comprehensive Technical Documentation (Architecture blueprints, API specs, operational runbook)',
+      'Live Handover Workshops (2 x 2-hour interactive sessions with your technical team)',
+      '14-Day Hypercare Support (Up to 8 hours dedicated standby support post-handoff)',
+    ],
+    cta: 'Add to Engagement',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Can we order packages individually or sequentially?',
+    answer: 'You can start with the Prototype package to validate feasibility with low risk. Upon successful validation, the learnings roll directly into the Production Implementation and Handoff phases.',
+  },
+  {
+    question: 'Are cloud hosting and LLM API costs included?',
+    answer: 'No. All infrastructure fees (AWS, Azure, GCP, OpenAI, Databricks endpoints) are paid directly by the client to maintain complete ownership of accounts and data security.',
+  },
+  {
+    question: 'What are the prerequisites to begin?',
+    answer: 'For the Prototype package, the client must provide initial data samples, API keys, and access to relevant technical stakeholders during kick-off.',
+  },
+];
+---
+
+<BaseLayout
+  title="Fixed-Price AI Engagement Packages | Modus Data"
+  description="De-risk AI initiatives with fixed-scope packages for LLM applications, custom NLP pipelines, and data science workflows."
+>
+  <div class="packages-page">
+    <section class="packages-hero" aria-labelledby="packages-title">
+      <div class="packages-hero-copy">
+        <p class="packages-eyebrow">Fixed-price engagements · Switzerland & Europe</p>
+        <h1 id="packages-title">Structured AI Engagements: From Prototype to Enterprise Production</h1>
+        <p class="packages-intro">De-risk your AI initiatives with fixed-scope, outcome-focused packages tailored for LLM applications, custom NLP pipelines, and data science workflows.</p>
+      </div>
+
+      <div class="engagement-flow" aria-label="Engagement stages: Prototype, CHF 15,000; Production, CHF 30,000; Handoff, CHF 5,000">
+        <div class="flow-stage">
+          <span class="flow-number">01</span>
+          <div><strong>Prototype</strong><span>CHF 15,000</span></div>
+        </div>
+        <span class="flow-connector" aria-hidden="true"></span>
+        <div class="flow-stage flow-stage--featured">
+          <span class="flow-number">02</span>
+          <div><strong>Production</strong><span>CHF 30,000</span></div>
+        </div>
+        <span class="flow-connector" aria-hidden="true"></span>
+        <div class="flow-stage">
+          <span class="flow-number">03</span>
+          <div><strong>Handoff</strong><span>CHF 5,000</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="package-section" aria-labelledby="package-options-title">
+      <div class="section-heading">
+        <div>
+          <p class="packages-eyebrow">Clear scope. Defined outcomes.</p>
+          <h2 id="package-options-title">Choose your engagement</h2>
+        </div>
+        <p>Fixed fees exclude VAT. Each stage can be scoped to your data, infrastructure, and regulatory context.</p>
+      </div>
+
+      <div class="package-grid">
+        {packages.map((item) => (
+          <article class:list={['package-card', item.featured && 'package-card--featured']} aria-labelledby={`${item.id}-title`}>
+            <div class="package-card-top">
+              <span class="package-badge">{item.badge}</span>
+              <h3 id={`${item.id}-title`}>{item.title}</h3>
+              <p class="package-price">{item.price}<span>Excl. VAT</span></p>
+              <p class="package-timeline"><span>Timeline</span>{item.timeline}</p>
+              <p class="package-target">{item.target}</p>
+            </div>
+            <div class="package-deliverables">
+              <h4>What’s included</h4>
+              <ul>
+                {item.deliverables.map((deliverable) => <li>{deliverable}</li>)}
+              </ul>
+            </div>
+            <a class="package-cta" href={`/contact/?package=${item.id}`}>{item.cta}<span aria-hidden="true">↗</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <p class="packages-eyebrow">Scope & expectations</p>
+        <h2 id="faq-title">Engagement guardrails</h2>
+        <p>Know what is included, what you own, and what we need to get started.</p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq, index) => (
+          <details class="faq-item" open={index === 0}>
+            <summary>{faq.question}<span aria-hidden="true"></span></summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="packages-contact" aria-labelledby="custom-engagement-title">
+      <div>
+        <p class="packages-eyebrow">Beyond the fixed scope</p>
+        <h2 id="custom-engagement-title">Need a Custom Advisory or Fractional Engagement?</h2>
+        <p>For complex long-term initiatives, architectural audits, or fractional AI leadership, custom retainer models are available.</p>
+      </div>
+      <a class="contact-cta" href="/contact/">Contact Dr. Arthur Jochems<span aria-hidden="true">↗</span></a>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .packages-page {
+    --packages-red: #b10d14;
+    --packages-ink: #202a35;
+    --packages-muted: #596573;
+    --packages-line: #d9dee3;
+    color: var(--packages-ink);
+    padding-bottom: 1rem;
+  }
+
+  .packages-hero {
+    padding: clamp(2rem, 6vw, 5rem) clamp(0.25rem, 2vw, 1.5rem) 2.75rem;
+    border-bottom: 1px solid var(--packages-line);
+  }
+
+  .packages-hero-copy {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .packages-eyebrow {
+    margin: 0 0 0.8rem;
+    color: var(--packages-red);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .packages-hero h1 {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 3.35rem;
+    line-height: 1.12;
+    font-weight: 700;
+  }
+
+  .packages-intro {
+    max-width: 710px;
+    margin: 1.25rem auto 0;
+    color: var(--packages-muted);
+    font-size: 1.08rem;
+  }
+
+  .engagement-flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr) 48px minmax(0, 1fr);
+    align-items: center;
+    max-width: 900px;
+    margin: 2.7rem auto 0;
+  }
+
+  .flow-stage {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-height: 82px;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--packages-line);
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .flow-stage--featured {
+    border-color: var(--packages-red);
+    box-shadow: inset 0 3px 0 var(--packages-red);
+  }
+
+  .flow-number {
+    display: grid;
+    place-items: center;
+    flex: 0 0 2.2rem;
+    width: 2.2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #f5e8e9;
+    color: var(--packages-red);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .flow-stage div { display: grid; gap: 0.1rem; }
+  .flow-stage strong { font-size: 0.95rem; }
+  .flow-stage div span { color: var(--packages-muted); font-size: 0.84rem; }
+
+  .flow-connector {
+    height: 1px;
+    background: var(--packages-red);
+    position: relative;
+  }
+
+  .flow-connector::after {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid var(--packages-red);
+    border-right: 1px solid var(--packages-red);
+    content: '';
+    transform: rotate(45deg);
+  }
+
+  .package-section { padding: 3rem 0 3.5rem; }
+
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .section-heading h2, .faq-heading h2 {
+    margin: 0;
+    font-size: 2.15rem;
+    line-height: 1.2;
+  }
+
+  .section-heading > p {
+    max-width: 390px;
+    margin: 0;
+    color: var(--packages-muted);
+    font-size: 0.9rem;
+  }
+
+  .package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .package-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.35rem;
+    border: 1px solid var(--packages-line);
+    background: rgba(255, 255, 255, 0.88);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .package-card:hover {
+    border-color: #b9c0c8;
+    box-shadow: 0 12px 28px rgba(32, 42, 53, 0.08);
+    transform: translateY(-3px);
+  }
+
+  .package-card--featured {
+    border-color: var(--packages-red);
+    box-shadow: inset 0 3px 0 var(--packages-red);
+  }
+
+  .package-card--featured:hover { border-color: var(--packages-red); }
+
+  .package-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    min-height: 1.7rem;
+    align-items: center;
+    padding: 0.15rem 0.55rem;
+    background: #f5e8e9;
+    color: #8f1018;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .package-card h3 {
+    min-height: 3.2rem;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .package-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0;
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .package-price span {
+    color: var(--packages-muted);
+    font-size: 0.73rem;
+    font-weight: 500;
+  }
+
+  .package-timeline {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.9rem 0 0;
+    padding: 0.65rem 0;
+    border-top: 1px solid #e8ebee;
+    border-bottom: 1px solid #e8ebee;
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+
+  .package-timeline span { color: var(--packages-muted); font-weight: 500; }
+
+  .package-target {
+    min-height: 4.8rem;
+    margin: 0.85rem 0 1.1rem;
+    color: var(--packages-muted);
+    font-size: 0.9rem;
+  }
+
+  .package-deliverables { flex: 1; }
+  .package-deliverables h4 { margin: 0 0 0.65rem; font-size: 0.88rem; }
+  .package-deliverables ul { display: grid; gap: 0.62rem; margin: 0; padding: 0; list-style: none; }
+  .package-deliverables li { position: relative; padding-left: 1.1rem; color: var(--packages-muted); font-size: 0.82rem; line-height: 1.5; }
+  .package-deliverables li::before { position: absolute; top: 0.55rem; left: 0; width: 5px; height: 5px; background: var(--packages-red); content: ''; }
+
+  .package-cta, .contact-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    min-height: 48px;
+    margin-top: 1.5rem;
+    padding: 0.7rem 0.9rem;
+    background: var(--packages-red);
+    color: #fff;
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .package-cta:hover, .contact-cta:hover { background: #8f1018; transform: translateY(-1px); }
+  .package-cta:focus-visible, .contact-cta:focus-visible { outline: 3px solid #202a35; outline-offset: 3px; }
+  .package-cta span, .contact-cta span { font-size: 1.1rem; }
+
+  .faq-section {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: 3rem 0;
+    border-top: 1px solid var(--packages-line);
+  }
+
+  .faq-heading > p:last-child { max-width: 320px; margin: 0.8rem 0 0; color: var(--packages-muted); font-size: 0.9rem; }
+  .faq-list { border-top: 1px solid var(--packages-line); }
+  .faq-item { border-bottom: 1px solid var(--packages-line); }
+
+  .faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 60px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 650;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:focus-visible { outline: 2px solid var(--packages-red); outline-offset: 3px; }
+  .faq-item summary span { position: relative; flex: 0 0 18px; width: 18px; height: 18px; }
+  .faq-item summary span::before, .faq-item summary span::after { position: absolute; top: 8px; left: 2px; width: 14px; height: 2px; background: var(--packages-red); content: ''; }
+  .faq-item summary span::after { transform: rotate(90deg); transition: transform 160ms ease; }
+  .faq-item[open] summary span::after { transform: rotate(0); }
+  .faq-item > p { max-width: 650px; margin: -0.15rem 2rem 1.15rem 0; color: var(--packages-muted); font-size: 0.9rem; }
+
+  .packages-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(1.4rem, 4vw, 2.6rem);
+    background: #202a35;
+    color: #fff;
+  }
+
+  .packages-contact .packages-eyebrow { color: #f2a2a6; }
+  .packages-contact h2 { max-width: 680px; margin: 0; font-size: 2.1rem; line-height: 1.2; }
+  .packages-contact > div > p:last-child { max-width: 660px; margin: 0.75rem 0 0; color: #d2d8de; font-size: 0.9rem; }
+  .contact-cta { flex: 0 0 auto; min-width: 230px; margin: 0; }
+
+  @media (max-width: 900px) {
+    .packages-hero h1 { font-size: 2.7rem; }
+    .section-heading h2, .faq-heading h2 { font-size: 1.85rem; }
+    .packages-contact h2 { font-size: 1.8rem; }
+    .package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .faq-section { grid-template-columns: 1fr; gap: 1.5rem; }
+    .faq-heading > p:last-child { max-width: 520px; }
+  }
+
+  @media (max-width: 620px) {
+    .packages-hero { padding-top: 2.25rem; }
+    .packages-hero-copy { text-align: left; }
+    .packages-hero h1 { font-size: 2.15rem; }
+    .section-heading h2, .faq-heading h2 { font-size: 1.6rem; }
+    .packages-contact h2 { font-size: 1.5rem; }
+    .engagement-flow { grid-template-columns: 1fr; gap: 0; margin-top: 2rem; }
+    .flow-stage { min-height: 68px; }
+    .flow-connector { width: 1px; height: 20px; margin-left: 1.95rem; }
+    .flow-connector::after { top: auto; right: -3px; bottom: 0; transform: rotate(135deg); }
+    .section-heading { align-items: flex-start; flex-direction: column; gap: 0.7rem; }
+    .package-grid { grid-template-columns: 1fr; }
+    .package-card--featured { grid-row: auto; }
+    .package-card h3, .package-target { min-height: 0; }
+    .packages-contact { align-items: stretch; flex-direction: column; }
+    .contact-cta { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  }
+</style>
