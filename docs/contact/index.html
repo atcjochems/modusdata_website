@@ -22,9 +22,10 @@ Switzerland</p>
 <p>I work with clients who value deep technical expertise, transparency, and production-grade delivery.</p>
 <p>Looking forward to connecting.</p>
 <hr>
-<div class="lead-panel lead-panel--form">
+<div id="contact-form" class="lead-panel lead-panel--form">
   <h3>Share your project</h3>
   <p>Tell us what you are solving, where delivery pressure sits, and the timeline you are working within.</p>
+  <div id="selected-package-badge" class="package-badge" hidden></div>
   <form class="contact-form" action="https://formspree.io/f/mbgjlebw" method="POST">
     <label>
       <span>Name</span>
@@ -42,8 +43,9 @@ Switzerland</p>
       <span>Target Timeline</span>
       <input type="text" name="timeline" placeholder="e.g. 6–8 weeks, Q4 2026">
     </label>
-    <input type="hidden" name="package_interest" id="package-interest">
-    <button type="submit" class="btn btn-primary">Send inquiry</button>
+    <input type="hidden" name="selected_package" id="selectedPackageInput">
+    <p style="font-size: 0.8125rem; color: #6b7280; margin-top: 8px; text-align: center;">⚡ Direct response within 24 business hours from Dr. Arthur Jochems.</p>
+    <button id="submit-inquiry" type="submit" class="btn btn-primary">Submit Inquiry ↗</button>
   </form>
   <div class="email-copy-block">
     <span class="email-copy-label">Email</span>
@@ -55,17 +57,29 @@ Switzerland</p>
 </div>
 <script>
   const urlParams = new URLSearchParams(window.location.search);
-  const packageParam = urlParams.get('package');
+  const pkg = urlParams.get('package');
   const packageNames = {
-    prototype: 'AI & Data Prototype Package',
-    production: 'Enterprise Production Implementation',
-    handoff: 'Knowledge Transfer & Handoff',
+    prototype: 'AI & Data Prototype Package (CHF 15,000)',
+    production: 'Enterprise Production Implementation (CHF 30,000)',
+    handoff: 'Knowledge Transfer & Handoff (CHF 5,000)',
   };
-  const packageName = packageNames[packageParam];
-  const packageInterest = document.querySelector('#package-interest');
+  const packageName = packageNames[pkg];
+  const packageInterest = document.querySelector('#selectedPackageInput');
+  const packageBadge = document.querySelector('#selected-package-badge');
+  const submitButton = document.querySelector('#submit-inquiry');
+  const submitLabels = {
+    prototype: 'Request Prototype Scoping Call ↗',
+    production: 'Request Implementation Call ↗',
+    handoff: 'Request Handoff Discussion ↗',
+  };
 
   if (packageName && packageInterest) {
     packageInterest.value = packageName;
+    packageBadge.innerHTML = `<span style="color: #6b7280;">Inquiry Focus:</span><strong style="color: #111827;">${packageName}</strong><a href="/packages/" style="color: #991b1b; text-decoration: none; margin-left: 4px; font-weight: 500;">Change ↗</a>`;
+    packageBadge.hidden = false;
+    packageBadge.style.cssText = 'display: inline-flex; align-items: center; gap: 8px; background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 9999px; padding: 4px 12px; font-size: 0.875rem; margin-bottom: 16px;';
+    submitButton.textContent = submitLabels[pkg];
+    document.querySelector('#contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script> </div>  </main> <footer class="site-footer"> <div class="footer-content"> <div class="footer-brand"> <strong>Modus Data GmbH</strong> <p>Pragmatic AI, data engineering and production systems for regulated organizations.</p> <div class="footer-meta" aria-label="Business information"> <span>Therwil / Basel, Switzerland</span> <span>CHE-218.406.940</span> </div> </div> <div class="footer-side"> <div class="footer-socials" aria-label="Social and contact links"> <a class="social-link" href="https://www.linkedin.com/company/modus-data-gmbh/" target="_blank" rel="noreferrer" aria-label="LinkedIn"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path fill="currentColor" d="M6.94 8.49a1.58 1.58 0 1 1 0-3.16 1.58 1.58 0 0 1 0 3.16ZM5.5 9.94h2.9v8.08H5.5V9.94Zm4.72 0h2.79v1.11h.04c.39-.74 1.35-1.52 2.77-1.52 2.96 0 3.5 1.95 3.5 4.47v4.02h-2.9v-3.76c0-1.42-.03-3.25-1.98-3.25-1.99 0-2.29 1.55-2.29 3.15v3.86h-2.93V9.94Z"></path> </svg> </a> <a href="mailto:arthur@modusdata.ch">arthur@modusdata.ch</a> </div> <div class="footer-links"> <a href="/services/">Services</a> <a href="/packages/">Packages</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/contact/">Contact</a> </div> </div> </div> <div class="footer-subfooter"> <div class="footer-legal"> <p>© 2026 Modus Data GmbH. All rights reserved.</p> <div class="legal-links" aria-label="Legal links"> <a href="/impressum/">Impressum</a> <a href="/privacy-policy/">Privacy Policy</a> <button class="cookie-settings" type="button" data-consent-reset>Cookie settings</button> </div> </div> <div class="insurance-badge" aria-label="Exali Haftpflichtversicherung"> <div class="insurance-wordmark">exali</div> <div class="insurance-mark" aria-hidden="true"> <span class="insurance-check"></span> </div> <div class="insurance-tag">HAFTPFLICHT<br>SICHER</div> </div> </div> </footer> </div> <div class="consent-banner" data-cookie-consent hidden role="dialog" aria-labelledby="consent-title" aria-describedby="consent-description"> <div> <strong id="consent-title">Optional analytics</strong> <p id="consent-description">We use LinkedIn Insight Tag to understand website visits and measure our campaigns. It loads only with your permission.</p> </div> <div class="consent-actions"> <button class="consent-button consent-button-secondary" type="button" data-consent="reject">Decline</button> <button class="consent-button consent-button-primary" type="button" data-consent="accept">Allow analytics</button> </div> </div> <script>
       (() => {
