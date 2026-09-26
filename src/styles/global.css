@@ -126,6 +126,70 @@ a {
   display: block;
 }
 
+.ecosystem-trust-strip {
+  padding: 1.5rem 0;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.ecosystem-trust-strip > p {
+  margin: 0 0 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ecosystem-trust-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.5rem;
+}
+
+.ecosystem-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #5d6670;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.ecosystem-mark {
+  width: 1.1rem;
+  height: 1.1rem;
+  opacity: 0.7;
+}
+
+.ecosystem-trust-item--secondary {
+  color: #7b838b;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.partner-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  margin-top: 0.9rem;
+}
+
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #6b7280;
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.partner-badge:hover { opacity: 1; }
+.partner-badge svg { width: 1.15rem; height: 1.15rem; }
+
 .consent-banner {
   position: fixed;
   right: 1rem;

@@ -17,6 +17,7 @@ if (!content.en) {
 const data = content.en;
 import Testimonials from '../components/widgets/Testimonials.astro';
 import FAQ from '../components/widgets/FAQ.astro';
+import EcosystemTrustStrip from '../components/EcosystemTrustStrip.astro';
 ---
 
 <BaseLayout
@@ -31,6 +32,8 @@ import FAQ from '../components/widgets/FAQ.astro';
       <a class="btn btn-secondary" href="/contact/">Book a consultation</a>
     </div>
   </section>
+
+  <EcosystemTrustStrip />
 
   <div class="markdown-content">
     <Content />
