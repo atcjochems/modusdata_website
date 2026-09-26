@@ -42,4 +42,10 @@ A brilliant model inside a Jupyter Notebook yields zero business value. We ensur
 
 If you have a complex data bottleneck or an ambitious AI initiative that needs senior-level execution, let's talk.
 
+<div class="service-package-actions" aria-label="Fixed-price package options">
+	<a class="btn btn-secondary" href="/contact/?package=prototype#contact-form">Book Prototype Scoping Call</a>
+	<a class="btn btn-primary" href="/contact/?package=production#contact-form">Schedule Implementation Call</a>
+	<a class="btn btn-secondary" href="/contact/?package=handoff#contact-form">Schedule Handoff Discussion</a>
+</div>
+
 [Schedule a Free Technical Call](mailto:arthur@modusdata.ch)

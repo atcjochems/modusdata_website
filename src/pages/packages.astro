@@ -26,7 +26,7 @@ const packages = [
     target: 'Build and deploy a secure, enterprise-grade AI solution into your infrastructure.',
     deliverables: [
       'Scalable Backend Architecture (Production APIs via FastAPI / Cloud Services)',
-      'MLOps & Observability (Evaluation harness, logging, telemetry via LangWatch/LangChain/Custom)',
+      'MLOps & Observability (Evaluation harness, logging, telemetry via LangGraph / OpenTelemetry / Custom)',
       'Enterprise Integrations (Vector DBs, Databricks/Spark pipelines, IAM/RBAC setup)',
       'CI/CD & Containerization (Dockerized setup, IaC scripts, and repo structuring)',
     ],
@@ -45,7 +45,7 @@ const packages = [
       'Live Handover Workshops (2 x 2-hour interactive sessions with your technical team)',
       '14-Day Hypercare Support (Up to 8 hours dedicated standby support post-handoff)',
     ],
-    cta: 'Add to Engagement',
+    cta: 'Schedule Handoff Discussion',
   },
 ];
 
@@ -61,6 +61,14 @@ const faqs = [
   {
     question: 'What are the prerequisites to begin?',
     answer: 'For the Prototype package, the client must provide initial data samples, API keys, and access to relevant technical stakeholders during kick-off.',
+  },
+  {
+    question: 'Who owns the Intellectual Property (IP) created?',
+    answer: '100% of all source code, models, pipelines, and documentation developed during the engagement belong exclusively to the client from day one.',
+  },
+  {
+    question: 'Where is client data stored and processed?',
+    answer: 'All work is executed directly within your existing cloud tenant (Azure, AWS, GCP) or secure infrastructure. Modus Data never stores or trains models on your proprietary data.',
   },
 ];
 ---
@@ -101,7 +109,7 @@ const faqs = [
           <p class="packages-eyebrow">Clear scope. Defined outcomes.</p>
           <h2 id="package-options-title">Choose your engagement</h2>
         </div>
-        <p>Fixed fees exclude VAT. Each stage can be scoped to your data, infrastructure, and regulatory context.</p>
+        <p>Fixed fees exclude VAT. Invoices can be issued in CHF or EUR. Each stage can be scoped to your data, infrastructure, and regulatory context.</p>
       </div>
 
       <div class="package-grid">
@@ -120,7 +128,7 @@ const faqs = [
                 {item.deliverables.map((deliverable) => <li>{deliverable}</li>)}
               </ul>
             </div>
-            <a class="package-cta" href={`/contact/?package=${item.id}`}>{item.cta}<span aria-hidden="true">↗</span></a>
+            <a class="package-cta" href={`/contact/?package=${item.id}#contact-form`}>{item.cta}<span aria-hidden="true">↗</span></a>
           </article>
         ))}
       </div>

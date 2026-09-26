@@ -38,7 +38,7 @@ Looking forward to connecting.
 
 ---
 
-<div class="lead-panel lead-panel--form">
+<div id="contact-form" class="lead-panel lead-panel--form">
   <h3>Share your project</h3>
   <p>Tell us what you are solving, where delivery pressure sits, and the timeline you are working within.</p>
   <form class="contact-form" action="https://formspree.io/f/mbgjlebw" method="POST">
@@ -58,6 +58,7 @@ Looking forward to connecting.
       <span>Target Timeline</span>
       <input type="text" name="timeline" placeholder="e.g. 6–8 weeks, Q4 2026" />
     </label>
+    <input type="hidden" name="package_interest" id="package-interest" />
     <button type="submit" class="btn btn-primary">Send inquiry</button>
   </form>
 
@@ -69,3 +70,22 @@ Looking forward to connecting.
     </div>
   </div>
 </div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const packageParam = urlParams.get('package');
+  const packageNames = {
+    prototype: 'AI & Data Prototype Package',
+    production: 'Enterprise Production Implementation',
+    handoff: 'Knowledge Transfer & Handoff',
+  };
+  const packageName = packageNames[packageParam];
+  const packageInterest = document.querySelector('#package-interest');
+
+  const contactForm = document.querySelector('#contact-form');
+
+  if (packageName && packageInterest) {
+    packageInterest.value = packageName;
+    contactForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
