@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'self-hosted-llms');
+if (!postEntry) throw new Error('Could not find self-hosted-llms markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Enterprise-Grade, Private AI | ${data.title}`}
+  description="How Modus Data GmbH engineers secure, production-grade generative AI architectures that keep sensitive data inside your private cloud."
+  image="/img/assets/post_self_hosted_llms/PPAI%20hero.png"
+  type="article"
+  publishedTime="2026-10-04"
+  author="Arthur Jochems"
+  tags={['Self-hosted LLMs', 'Enterprise AI', 'Data privacy', 'RAG']}
+>
+  <article class="markdown-content portfolio-article portfolio-article--wide">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

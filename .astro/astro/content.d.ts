@@ -218,6 +218,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"self-hosted-llms.md": {
+	id: "self-hosted-llms.md";
+  slug: "self-hosted-llms";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "services.md": {
 	id: "services.md";
   slug: "services";
