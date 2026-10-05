@@ -83,4 +83,4 @@ For compliance and edge-case validation, ambiguous pairs escalated by the system
 
 > The strongest integration outcomes come from treating entity resolution as a governed product: measurable, reviewable and built for change.
 
-[Discuss a data integration challenge](mailto:arthur@modusdata.ch)
+[Discuss a data integration challenge](/contact/)
