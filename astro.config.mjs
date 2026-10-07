@@ -5,7 +5,4 @@ export default defineConfig({
   base: '/',
   outDir: './docs',
   output: 'static',
-  redirects: {
-    '/llm': '/portfolio/self-hosted-llms/',
-  },
 });

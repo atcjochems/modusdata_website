@@ -9,6 +9,8 @@ interface Props {
   publishedTime?: string;
   author?: string;
   tags?: string[];
+  extraSchemas?: Record<string, unknown>[];
+  bodyClass?: string;
 }
 
 const {
@@ -19,10 +21,13 @@ const {
   publishedTime,
   author = 'Arthur Jochems',
   tags = [],
+  extraSchemas = [],
+  bodyClass = '',
 } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://modusdata.ch');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
+const isLinkedInLanding = Astro.url.searchParams.get('utm_source')?.toLowerCase() === 'linkedin';
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -90,12 +95,13 @@ const links = [
 
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+    {extraSchemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class={bodyClass || (isLinkedInLanding ? 'linkedin-landing' : '')}>
     <div class="site-shell">
       <header class="site-header">
         <a class="brand" href="/">
@@ -106,11 +112,17 @@ const links = [
           </span>
         </a>
 
-        <nav class="site-nav" aria-label="Primary navigation">
-          {links.map((item) => (
-            <a href={item.href}>{item.label}</a>
-          ))}
-        </nav>
+        {!isLinkedInLanding && (
+          <nav class="site-nav" aria-label="Primary navigation">
+            {links.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))}
+          </nav>
+        )}
+
+        {isLinkedInLanding && (
+          <a class="btn btn-primary header-cta" href="/contact/">Book a free 30-min architecture call</a>
+        )}
       </header>
 
       <main class="site-main">

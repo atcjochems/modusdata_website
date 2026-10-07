@@ -60,6 +60,10 @@ Looking forward to connecting.
       <input type="text" name="timeline" placeholder="e.g. 6–8 weeks, Q4 2026" />
     </label>
     <input type="hidden" name="selected_package" id="selectedPackageInput" />
+    <input type="hidden" name="utm_source" />
+    <input type="hidden" name="utm_medium" />
+    <input type="hidden" name="utm_campaign" />
+    <input type="hidden" name="referrer" />
     <p style="font-size: 0.8125rem; color: #6b7280; margin-top: 8px; text-align: center;">⚡ Direct response within 24 business hours from Dr. Arthur Jochems.</p>
     <button id="submit-inquiry" type="submit" class="btn btn-primary">Submit Inquiry ↗</button>
   </form>
@@ -92,6 +96,19 @@ Looking forward to connecting.
   };
 
   const contactForm = document.querySelector('#contact-form');
+
+  const campaignParams = ['utm_source', 'utm_medium', 'utm_campaign'];
+  campaignParams.forEach((key) => {
+    const input = document.querySelector(`input[name="${key}"]`);
+    if (input) {
+      input.value = urlParams.get(key) || '';
+    }
+  });
+
+  const referrerInput = document.querySelector('input[name="referrer"]');
+  if (referrerInput) {
+    referrerInput.value = document.referrer || '';
+  }
 
   if (packageName && packageInterest) {
     packageInterest.value = packageName;

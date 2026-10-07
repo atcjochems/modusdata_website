@@ -1,22 +1,75 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { content } from '../../data/content';
 import { getEntry } from 'astro:content';
 
 const postEntry = await getEntry('pages', 'self-hosted-llms');
 if (!postEntry) throw new Error('Could not find self-hosted-llms markdown');
 const { Content } = await postEntry.render();
-const data = content.en;
+
+const faqEntries = [
+  {
+    question: 'Is self-hosting legally required?',
+    answer:
+      'No. Using external APIs is not prohibited by the FADP or GDPR, but it requires a lawful basis, appropriate agreements and a transfer assessment. Whether self-hosting is the right choice depends on your data, sector and risk assessment. We are not a law firm, so involve your legal and data protection teams.',
+  },
+  {
+    question: 'How do open-weight models compare with proprietary ones?',
+    answer:
+      'It depends on the task. We benchmark on your data and recommend a model based on results, not reputation.',
+  },
+  {
+    question: 'Which clouds do you support?',
+    answer: 'Azure and GCP.',
+  },
+  {
+    question: 'Who operates the system after go-live?',
+    answer:
+      'Depending on client needs, fractional retainer packages can be arranged or a handover to corporate internal personnel.',
+  },
+  {
+    question: 'What does it cost?',
+    answer: 'Infrastructure costs plus a project fee. See our packages, or book a call for an estimate.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Self-hosted LLM deployment',
+  serviceType: 'Self-hosted LLM deployment',
+  provider: {
+    '@type': 'Organization',
+    name: 'Modus Data GmbH',
+    url: 'https://modusdata.ch',
+  },
+  areaServed: ['Switzerland', 'European Union'],
+  description:
+    'We design and deploy self-hosted open-weight LLMs in customer Azure or GCP tenants with private networking, enterprise identity controls and audit logging.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqEntries.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
-  title={`Enterprise-Grade, Private AI | ${data.title}`}
-  description="How Modus Data GmbH engineers secure, production-grade generative AI architectures that keep sensitive data inside your private cloud."
+  title="Private AI & Self-Hosted LLMs for Regulated Organizations | Modus Data"
+  description="We design and deploy self-hosted open-weight LLMs in your own Azure or GCP tenant. Private networking, audit logging, enterprise identity. Basel, Switzerland."
   image="/img/assets/post_self_hosted_llms/PPAI%20hero.png"
   type="article"
-  publishedTime="2026-10-04"
+  publishedTime={postEntry.data.publishedTime}
   author="Arthur Jochems"
-  tags={['Self-hosted LLMs', 'Enterprise AI', 'Data privacy', 'RAG']}
+  tags={['Private AI', 'Self-hosted LLMs', 'Azure', 'GCP']}
+  extraSchemas={[serviceSchema, faqSchema]}
 >
   <article class="markdown-content portfolio-article portfolio-article--wide">
     <a class="back-link" href="/portfolio/">← Back to portfolio</a>
