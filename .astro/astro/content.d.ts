@@ -155,6 +155,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".md"] };
+"blood-iron-screening.md": {
+	id: "blood-iron-screening.md";
+  slug: "blood-iron-screening";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "contact.md": {
 	id: "contact.md";
   slug: "contact";

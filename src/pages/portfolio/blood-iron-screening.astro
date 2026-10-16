@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { content } from '../../data/content';
+import { getEntry } from 'astro:content';
+
+const postEntry = await getEntry('pages', 'blood-iron-screening');
+if (!postEntry) throw new Error('Could not find blood-iron-screening markdown');
+const { Content } = await postEntry.render();
+const data = content.en;
+---
+
+<BaseLayout
+  title={`Iron Deficiency Can Hide in Plain Sight | ${data.title}`}
+  description="A practical look at the IRON-5 questionnaire and an open-source demo exploring how iron deficiency may be flagged before anemia develops."
+  image="/img/assets/post_blood_iron/hero_image.jpg"
+  type="article"
+  publishedTime={postEntry.data.publishedTime}
+  author="Arthur Jochems"
+  tags={['Healthcare AI', 'Iron deficiency', 'Clinical data science', 'Open source', 'Screening']}
+>
+  <article class="markdown-content portfolio-article">
+    <a class="back-link" href="/portfolio/">← Back to portfolio</a>
+    <h1>{postEntry.data.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

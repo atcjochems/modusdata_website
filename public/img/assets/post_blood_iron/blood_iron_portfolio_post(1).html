@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screening for Iron Deficiency Beyond Hemoglobin | Modus Data</title>
+    <meta name="description" content="An open-source demo of the IRON-5 questionnaire and a lightweight machine learning predictor for flagging iron deficiency risk that routine hemoglobin testing can miss.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="https://modusdata.ch/portfolio/" class="font-bold text-xl text-slate-900 tracking-tight">Modus Data</a>
+            <a href="https://modusdata.ch/portfolio/" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+                <i class="fa-solid fa-arrow-left mr-2"></i>Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+
+        <!-- Post Header -->
+        <div class="mb-8">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                Clinical Data Science &amp; Screening
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                Uncovering the Blind Spot: Screening for Iron Deficiency Beyond Hemoglobin
+            </h1>
+            <p class="text-xl text-slate-600 leading-relaxed">
+                How a short questionnaire and lightweight machine learning can help decide who should get a ferritin test, and why routine blood counts alone can miss iron deficiency.
+            </p>
+        </div>
+
+        <!-- Hero Image Section -->
+        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-200">
+            <img src="watermarked_img_3480338006895880802.jpg" alt="Illustration of blood iron prediction and screening" class="w-full h-auto object-cover max-h-[450px]">
+        </div>
+
+        <!-- Article Body -->
+        <article class="space-y-10 text-slate-700 leading-relaxed text-lg">
+
+            <!-- Section 1 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight border-l-4 border-blue-600 pl-4">
+                    The Blind Spot in Routine Care
+                </h2>
+                <p>
+                    Iron deficiency is the most common micronutrient deficiency worldwide, and young women are at particularly high risk because of growth, menstrual blood loss and dietary habits.<sup><a href="#ref1" class="text-blue-600 hover:underline">[1]</a></sup> Yet there are no official guidelines recommending screening for iron deficiency in healthy young women.
+                </p>
+                <p>
+                    Routine blood work typically includes a <strong>complete blood count (CBC)</strong>, which reports <strong>hemoglobin (Hb)</strong>. Hemoglobin is useful for detecting anemia, but it is a late signal: iron stores can be depleted well before hemoglobin falls below the anemia threshold. The best single test for iron stores is <strong>serum ferritin</strong>, which is not part of a standard check-up.
+                </p>
+                <p>
+                    The data in the source study illustrate the gap. Among 483 high school girls in Sweden, 183 (38%) had a ferritin below 15&nbsp;µg/L, yet only 17.6% of those iron-deficient girls were anemic (Hb &lt;120&nbsp;g/L). Roughly four in five would have been missed by an anemia check alone.<sup><a href="#ref1" class="text-blue-600 hover:underline">[1]</a></sup>
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight border-l-4 border-blue-600 pl-4">
+                    Why a Questionnaire Can Help
+                </h2>
+                <p>
+                    Testing ferritin in everyone is unlikely to be feasible in most healthcare systems. A short risk questionnaire offers a pragmatic alternative: it does not diagnose anything, but it helps prioritize who should be offered a confirmatory blood test.
+                </p>
+                <p>
+                    That is the idea behind <strong>IRON-5</strong>, a five-item instrument developed by Vinge et al. (2026) from a cross-sectional study of high school girls aged 16&ndash;19 in Malmö and Lund, Sweden.<sup><a href="#ref1" class="text-blue-600 hover:underline">[1]</a></sup> Each "risk" answer scores one point, for a total of 0 to 5:
+                </p>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                    <table class="w-full text-left text-base">
+                        <thead class="bg-slate-100 text-slate-700 text-sm uppercase tracking-wider">
+                            <tr>
+                                <th class="px-4 py-3">Risk factor (1 point each)</th>
+                                <th class="px-4 py-3 whitespace-nowrap">Odds ratio (95% CI)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr><td class="px-4 py-3">Excludes red meat (pescatarian, vegetarian, vegan)</td><td class="px-4 py-3">3.70 (2.36&ndash;5.79)</td></tr>
+                            <tr><td class="px-4 py-3">No iron or iron-containing supplements</td><td class="px-4 py-3">2.61 (1.28&ndash;5.32)</td></tr>
+                            <tr><td class="px-4 py-3">Menstruation bothers you due to heavy bleeding</td><td class="px-4 py-3">2.30 (1.47&ndash;3.62)</td></tr>
+                            <tr><td class="px-4 py-3">No hormonal contraceptives</td><td class="px-4 py-3">2.13 (1.21&ndash;3.75)</td></tr>
+                            <tr><td class="px-4 py-3">Avoids activities during heavy menstrual days</td><td class="px-4 py-3">1.98 (1.30&ndash;3.00)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    A score of <strong>3 or more</strong> flags high risk. In the development sample this cut-off gave a sensitivity of 74%, specificity of 57%, positive predictive value of 51%, negative predictive value of 78% and an AUC of 0.72.<sup><a href="#ref1" class="text-blue-600 hover:underline">[1]</a></sup> In other words, IRON-5 is a triage aid with good sensitivity and moderate specificity: some iron-deficient girls will be missed, and some who screen positive will turn out to be iron sufficient.
+                </p>
+            </section>
+
+            <!-- Section 3: Caveats -->
+            <section class="space-y-4 bg-amber-50 border border-amber-200 p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">
+                    What the Evidence Does and Doesn't Show
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Development, not external validation.</strong> The score was derived post hoc from one study population, and the authors state that further validation is required.</li>
+                    <li><strong>Narrow population.</strong> It was built on self-reported data from girls aged 16&ndash;19 and only applies to people who menstruate. Its performance in other age groups is unknown.</li>
+                    <li><strong>Definition of deficiency.</strong> The study used the WHO cut-off of ferritin &lt;15&nbsp;µg/L. Newer work suggests a higher physiological threshold of about 25&nbsp;µg/L, which would classify more people as deficient.<sup><a href="#ref1" class="text-blue-600 hover:underline">[1]</a></sup></li>
+                    <li><strong>Benefit of treatment is still open.</strong> Evidence that iron treatment helps comes mainly from people seeking care for symptoms such as fatigue. Whether treating screen-detected, symptom-free iron deficiency is worthwhile remains to be shown.</li>
+                </ul>
+                <p class="text-base">
+                    The app and code below are an educational demonstration, not a medical device, and are not a substitute for a ferritin test or medical advice.
+                </p>
+            </section>
+
+            <!-- Section 4: The Live App -->
+            <section class="space-y-4 bg-blue-50 border border-blue-100 p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">
+                    Explore the Live App
+                </h2>
+                <p>
+                    To show the approach in practice, I built an interactive, dual-mode web application hosted on Streamlit Cloud. It combines a tabular machine learning predictor trained on public health data with an implementation of the published IRON-5 questionnaire and its scoring rule.
+                </p>
+                <p class="text-base text-slate-600">
+                    This is an independent implementation based on the openly licensed paper (CC BY 4.0). It is not affiliated with the study authors.
+                </p>
+                <div class="pt-2">
+                    <a href="https://bloodiron.streamlit.app/" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-sm">
+                        <i class="fa-solid fa-laptop-code mr-2"></i> Launch Live Streamlit App
+                    </a>
+                </div>
+            </section>
+
+            <!-- Section 5: Technical Breakdown -->
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight border-l-4 border-blue-600 pl-4">
+                    Inside the GitHub Repository
+                </h2>
+                <p>
+                    The pipeline, exploratory notebooks, trained models and application source code are open-sourced under the MIT license on GitHub.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                    <li><strong>Tabular ML classification:</strong> Logistic Regression and XGBoost binary classifiers trained on CBC-derived features to predict iron-risk categories.</li>
+                    <li><strong>IRON-5 scoring engine:</strong> A transparent, rule-based implementation of the five yes/no items (diet, menstrual bleeding burden, activity avoidance, iron supplements, hormonal contraception) and the &ge;3 threshold.</li>
+                    <li><strong>Clean code structure:</strong> Modular utility functions, model serialization with joblib, and a Streamlit interface built for fast cold starts.</li>
+                </ul>
+                <div class="pt-4">
+                    <a href="https://github.com/atcjochems/modusdata_blood_iron" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors shadow-sm">
+                        <i class="fa-brands fa-github mr-2"></i> View Repository on GitHub
+                    </a>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section class="space-y-3 border-t border-slate-200 pt-8">
+                <h2 class="text-xl font-bold text-slate-900 tracking-tight">Reference</h2>
+                <ol class="list-decimal pl-6 text-base text-slate-600">
+                    <li id="ref1">
+                        Vinge F, Stubbendorff A, Borgström Bolmsjö B, Jakobsson U, Milos Nymberg V, Wolff M. Screening for iron deficiency in young women: the predictive validity of a five-item screening instrument (IRON-5). <em>Scandinavian Journal of Primary Health Care</em>. 2026;44(1):2649329.
+                        <a href="https://doi.org/10.1080/02813432.2026.2649329" target="_blank" rel="noopener" class="text-blue-600 hover:underline">doi:10.1080/02813432.2026.2649329</a>
+                    </li>
+                </ol>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-20 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Modus Data. Open source machine learning for healthcare accessibility.</p>
+    </footer>
+
+</body>
+</html>
