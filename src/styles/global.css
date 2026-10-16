@@ -352,6 +352,25 @@ a {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  margin-right: 0.55rem;
+  fill: none;
+}
+
+.btn svg.btn-icon-solid {
+  fill: currentColor;
+}
+
+.btn svg path {
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .btn:hover {
   transform: translateY(-2px);
 }
