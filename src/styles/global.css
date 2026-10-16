@@ -526,7 +526,8 @@ a {
 }
 
 .portfolio-article {
-  max-width: 900px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
 }
 
